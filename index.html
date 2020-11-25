@@ -277,9 +277,9 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  search' style="display: ;">
           
-            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/W4j1e/pic/raw/master/img/ns.jpg"></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -292,29 +292,37 @@
     
   </div>
   <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Nothing here actually..." />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
     <div class='menu navigation'>
       <div class='list-h'>
         
           
-            <a href="/bg/v4/getting-started/"
+            <a href="/bg/"
               
               
-              id="bgv4getting-started">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+              id="bg">
+              <p>博客</p>
             </a>
           
             <a href="/bg/archives/"
               
               
               id="bgarchives">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+              <p>归档</p>
             </a>
           
-            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
+            <a href="http://music.163.com/playlist?id=2709509873"
               
               
-              id="https:githubcomvolantis-xhexo-theme-volantis">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>源码</p>
+              id="http:music163complaylist?id=2709509873">
+              <p>后摇</p>
             </a>
           
         
@@ -339,6 +347,10 @@
     
       
         
+          
+        
+          
+        
         
           
         
@@ -358,14 +370,14 @@
     
     <h2 class="article-title" >
       <a href="/bg/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/">
-        Nov 24, 2020
+        你的神是一位少年
       </a>
     </h2>
   
   <div class='md'>
     
       
-        你的神是一位少年在阳光里翩翩起舞，
+        在阳光里翩翩起舞，
 抖落发间的寒气。
 写下一首明媚的诗，
 是清晨绽开的花朵，
@@ -388,7 +400,7 @@
 
 洒在你可爱的脸上，
 是诗，是你白里透红的青春，
-是沉默...
+是沉默，是苏醒，是遗忘...
       
     
   </div>
@@ -397,6 +409,9 @@
       <div>
         
         <time>2020-11-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/bg/categories/%E8%AF%97%E6%AD%8C/">诗歌</a>
         
       </div>
       
@@ -444,6 +459,9 @@ see you next time!
       <div>
         
         <time>2020-11-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/bg/categories/test/">test</a>
         
       </div>
       
@@ -543,22 +561,62 @@ see you next time!
   
     
     
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/bg/categories/test/" href="/bg/categories/test/"
+            id="bgcategoriestest"
+            ><div class='name'>test</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/bg/categories/%E8%AF%97%E6%AD%8C/" href="/bg/categories/%E8%AF%97%E6%AD%8C/"
+            id="bgcategoriesE8AF97E6AD8C"
+            ><div class='name'>诗歌</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
 
   
 
   
     
     
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/bg/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">测试</a> <a href="/bg/tags/%E8%AF%97%E6%AD%8C/" style="font-size: 14px; color: #999">诗歌</a>
+    </div>
+  </section>
+
 
   
 
   
 
 
-   <div id=163plyer>
-   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=360 src="//music.163.com/outchain/player?type=0&id=2118214092&auto=1&height=430">
-   </iframe>
-   <div>
 </aside>
 
 
@@ -592,6 +650,22 @@ see you next time!
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.5'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='2118214092'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -610,7 +684,7 @@ see you next time!
       
     
       
-        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
@@ -834,6 +908,20 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '2118214092';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.5';
+  loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+
+  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+
+</script>
+
+
 
 
   
@@ -940,6 +1028,8 @@ function listenSearch(){
 }
 function setSearchService() {
 	listenSearch();
+	
+		document.addEventListener("pjax:success", listenSearch);
 	
 }
 </script>
