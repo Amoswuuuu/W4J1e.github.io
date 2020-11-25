@@ -435,7 +435,7 @@
 <p>③重新引用背景图，解决此前背景图片无法加载的问题；</p>
 <p>④添加暗黑模式；</p>
 <p>⑤安装搜索插件，启用博客内搜索；</p>
-<p>⑥启用评论功能；</p>
+<p>⑥启用评论功能，由于更新appid，此前的访客数据清空；</p>
 <p>⑦创建文章分类，添加标签。</p>
 <p>2020.11.24 ：</p>
 <p>①博客部署完毕，使用hexo以及volantis主题，在此表示感谢。</p>
@@ -470,7 +470,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-25T22:29:42+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-25T23:14:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Nov 25, 2020</p>
@@ -918,11 +918,11 @@ var loadCSS = function( href, before, media, attributes ){
 
 <script>
   var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+  var meta = 'nick,mail,QQ'.split(',').filter(function (item) {
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+  var requiredFields = 'nick,mail,QQ'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
@@ -950,7 +950,7 @@ var loadCSS = function( href, before, media, attributes ){
   function pjax_valine() {
     if(!document.querySelectorAll("#valine_container")[0])return;
 
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "来都来了，说句话再走如何？";
 
     let path = pdata.commentPath;
     if (path.length == 0) {
@@ -1036,8 +1036,8 @@ function setSearchService() {
   <script defer>
 
   const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    app_id: 'ApUBLccEMPMlfyeXxG0NGBm3-gzGzoHsz',
+    app_key: 'Et3Yd9dVf6lfhsSJBIR2gGQT',
     custom_api_server: '',
 
     // 查询存储的记录
