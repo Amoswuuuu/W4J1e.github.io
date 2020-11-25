@@ -29,23 +29,23 @@
     
     
     <entry>
-      <title>博文测试</title>
-      <link href="/bg/2020/11/24/hello-world/"/>
-      <url>/bg/2020/11/24/hello-world/</url>
+      <title>更新日志</title>
+      <link href="/bg/2020/11/24/update/"/>
+      <url>/bg/2020/11/24/update/</url>
       
-        <content type="html"><![CDATA[<p>博客使用hexo开发，引用主题为volantis。</p><p>对此表示衷心的感谢。</p><p>内容后续逐渐完善。</p><p>see you next time!</p>]]></content>
+        <content type="html"><![CDATA[<p>2020.11.25 ：</p><p>①删除网易云音乐框架，采用hexo插件aplayer替代；</p><p>②修改背景色，使得每日诗词在手机版模式下字体颜色相对明显；</p><p>③重新引用背景图，解决此前背景图片无法加载的问题；</p><p>④添加暗黑模式；</p><p>⑤安装搜索插件，启用博客内搜索；</p><p>⑥创建文章分类，添加标签。</p><p>2020.11.24 ：</p><p>①博客部署完毕，使用hexo以及volantis主题，在此表示感谢。</p><p>②发布曾经写的一首诗。</p><p>see you next time!</p>]]></content>
       
       
       <categories>
           
-          <category> test </category>
+          <category> 日志 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 测试 </tag>
+            <tag> 更新 </tag>
             
         </tags>
       
