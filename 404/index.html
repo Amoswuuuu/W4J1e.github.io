@@ -38,13 +38,13 @@
 
   
     
-<link rel="stylesheet" href="/bg/css/first.css">
+<link rel="stylesheet" href="/css/first.css">
 
   
 
   
-  <link rel="stylesheet" href="/bg/css/style.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/bg/css/style.css"></noscript>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
 
   <script id="loadcss"></script>
@@ -69,7 +69,7 @@
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/bg/'>
+        <a class="title flat-box" target="_self" href='/'>
           
             <img no-lazy class='logo' src='https://gitee.com/W4j1e/pic/raw/master/img/duola.jpg'/>
           
@@ -86,11 +86,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bg/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="bg"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -102,11 +102,11 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bg/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="bgarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -162,11 +162,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bg/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
                   
                   
                   
-                    id="bg"
+                    id="home"
                   >
                   <i class='fas fa-rss fa-fw'></i>博客
                 </a>
@@ -178,11 +178,11 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bg/archives/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
                   
                   
                   
-                    id="bgarchives"
+                    id="archives"
                   >
                   <i class='fas fa-archive fa-fw'></i>归档
                 </a>
@@ -256,17 +256,17 @@
       <div class='list-h'>
         
           
-            <a href="/bg/"
+            <a href="/"
               
               
-              id="bg">
+              id="home">
               <p>博客</p>
             </a>
           
-            <a href="/bg/archives/"
+            <a href="/archives/"
               
               
-              id="bgarchives">
+              id="archives">
               <p>归档</p>
             </a>
           
@@ -339,7 +339,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="404" data-path="/bg/404/">
+      <div id="lc-pv" data-title="404" data-path="/404/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -390,7 +390,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.gitee.io/bg/404/index.html&title=404 - W4J1e&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.github.io/404/index.html&title=404 - W4J1e&summary="
           
           >
           
@@ -402,7 +402,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.gitee.io/bg/404/index.html&title=404 - W4J1e&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.github.io/404/index.html&title=404 - W4J1e&summary="
           
           >
           
@@ -414,7 +414,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.gitee.io/bg/404/index.html&title=404 - W4J1e&summary="
+          href="http://service.weibo.com/share/share.php?url=https://w4j1e.github.io/404/index.html&title=404 - W4J1e&summary="
           
           >
           
@@ -1172,7 +1172,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   <script>
 const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/bg/" || "/").endsWith('/') ? ("/bg/" || "/") : ("/bg//" || "/" );
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
@@ -1302,7 +1302,7 @@ function setSearchService() {
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://W4J1e.gitee.io/bg' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://W4j1e.github.io' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1320,7 +1320,7 @@ function setSearchService() {
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://W4J1e.gitee.io/bg' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://W4j1e.github.io' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1342,7 +1342,7 @@ function setSearchService() {
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://W4J1e.gitee.io/bg' + pv.getAttribute('data-path');
+          var url = 'https://W4j1e.github.io' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
@@ -1716,5 +1716,5 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
     
   </div>
-<script src="/bg/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
