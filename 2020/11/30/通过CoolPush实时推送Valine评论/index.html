@@ -19,17 +19,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>你的神是一位少年 - W4J1e&#39;s blog</title>
+  <title>通过CoolPush实时推送Valine评论 - W4J1e&#39;s blog</title>
   
-    <meta name="keywords" content="诗歌">
+    <meta name="keywords" content="网络">
   
 
-  
-    <meta name="description" content="在阳光里翩翩起舞，
-抖落发间的寒气。
-写下一首明媚的诗，
-是清晨绽开的花朵，
-于黄昏时凋零。">
   
 
   <!-- feed -->
@@ -312,7 +306,7 @@
     
     
       <h1 class="title">
-        你的神是一位少年
+        通过CoolPush实时推送Valine评论
       </h1>
       <div class='new-meta-box'>
         
@@ -332,7 +326,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E8%AF%97%E6%AD%8C/">诗歌</a>
+      <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>
     </a>
   </div>
 
@@ -343,7 +337,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 24, 2020</p>
+    <p>发布于：Nov 30, 2020</p>
   </a>
 </div>
 
@@ -354,7 +348,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="你的神是一位少年" data-path="/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/">
+      <div id="lc-pv" data-title="通过CoolPush实时推送Valine评论" data-path="/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -371,42 +365,33 @@
 
 
   
-  <p>在阳光里翩翩起舞，</p>
-<p>抖落发间的寒气。</p>
-<p>写下一首明媚的诗，</p>
-<p>是清晨绽开的花朵，</p>
-<p>于黄昏时凋零。</p>
-<a id="more"></a>
+  <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。</p>
+<p>①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方</p>
+<p>便，故弃用；</p>
+<p>②Qmsg酱：参考了多个文档多次配置，但是评论测试时，日志显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QQ提醒失败: Request failed with status code 404</span><br></pre></td></tr></table></figure>
 
-<br/>    
+<p>我认为可能是Qmsg酱推送出了故障，于是弃用。</p>
+<p>③CoolPush：这是我无意中发现的一个推送服务，由大佬@xuthus开发，能够实时推送评论相关内容到QQ。</p>
+<h2 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h2><p>①我是采用的hexo+volantis主题，volantis内置了许多第三方评论插件，我启用的是valine。其它主题可能略有不同。</p>
+<p>②打开<a href="https://cp.xuthus.cc/">https://cp.xuthus.cc/</a> ，登陆，可以选择github、gitee和OSC登陆；</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" srcset="data:image/png;base64,666" alt="登陆"></p>
+<p>②绑定QQ号，选择机器人并添加机器人为好友；</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" srcset="data:image/png;base64,666" alt="绑定QQ和选择机器人"></p>
+<p>③点击上方说明，下拉到“配合valine进行推送”，复制框内代码粘贴到script.ejs底部，将skey替换成你自己的，路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的博客\themes\volantis\layout\_third-party\comments\valine&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>这是你的诗，</p>
-<p>刻在二十五岁的铁轨上。</p>
-<p>枕着松木沉沉睡去，</p>
-<p>载着你轻盈的梦，</p>
-<p>奔向远方。</p>
-<br/>
+<p>④需要注意的是，目前（2020.11.30 13:00），大佬提供的js脚本需要稍稍修改，否则会提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</span><br></pre></td></tr></table></figure>
 
-<p>不留一点痕迹，</p>
-<p>如同岁月从花瓣中滑落，</p>
-<p>是晨露，是朝霞，是黄昏。</p>
-<p>是一往无前在夜里奔跑的星光，</p>
-<p>和流浪在远处黯淡的灯火。</p>
-<br/>
+<p>通过百度，学习csdn上的一篇文章，发现需要用window.οnlοad=function(){ }将代码包裹。</p>
+<p>故完整代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> pushLink = <span class="string">&quot;https://push.xuthus.cc/send/Skey&quot;</span>;</span><br><span class="line"><span class="comment">//推送的网站名称</span></span><br><span class="line"><span class="keyword">var</span> siteName = <span class="string">&quot;&quot;</span>; </span><br><span class="line"><span class="keyword">var</span> valineButton = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vsubmit vbtn&quot;</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> title = siteName + <span class="string">&quot;上又有新评论啦~!\n&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">send_valine</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//获取元素信息</span></span><br><span class="line"><span class="keyword">var</span> pagename = <span class="built_in">document</span>.title;</span><br><span class="line"><span class="keyword">var</span> pageurl = <span class="built_in">document</span>.URL;</span><br><span class="line"><span class="keyword">var</span> pushtime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> vnick = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vnick vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> vmail = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vmail vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> vlink = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vlink vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> veditor = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;veditor vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">content =</span><br><span class="line">  title +</span><br><span class="line">  <span class="string">&quot;昵称：&quot;</span> + vnick +</span><br><span class="line">  <span class="string">&quot;\n邮箱：&quot;</span> + vmail +</span><br><span class="line">  <span class="string">&quot;\n网站地址：&quot;</span> + vlink +</span><br><span class="line">  <span class="string">&quot;\n文章标题：&quot;</span> + pagename +</span><br><span class="line">  <span class="string">&quot;\n评论内容：&quot;</span> + veditor +</span><br><span class="line">  <span class="string">&quot;\n文章链接：&quot;</span> + pageurl +</span><br><span class="line">  <span class="string">&quot;\n评论时间&quot;</span> + pushtime.toLocaleString() + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> httpRequest = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//第一步：创建需要的对象</span></span><br><span class="line">httpRequest.open(<span class="string">&quot;POST&quot;</span>, pushLink, <span class="literal">true</span>); <span class="comment">//第二步：打开连接</span></span><br><span class="line">httpRequest.setRequestHeader(</span><br><span class="line">  <span class="string">&quot;Content-type&quot;</span>,</span><br><span class="line">  <span class="string">&quot;application/json&quot;</span></span><br><span class="line">); <span class="comment">//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）</span></span><br><span class="line">httpRequest.send(content); <span class="comment">//发送请求 将情头体写在send中</span></span><br><span class="line">&#125;</span><br><span class="line">valineButton.onclick = send_valine;<span class="comment">//点击事件</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>洒在你可爱的脸上，</p>
-<p>是诗，是你白里透红的青春，</p>
-<p>是沉默，是苏醒，是遗忘。</p>
-<p>是月，是漫无目的的游荡，</p>
-<p>是你随绿皮火车尘土飞扬的梦。</p>
-<br/>
-
-<p>月光下摇曳的身姿，</p>
-<p>是你，</p>
-<p>你的神是一位少年。</p>
-<br/>
-
-<p>W4J1e</p>
+<p>⑤hexo clean &amp; hexo d ，enjoy it！</p>
+<p> <img src="https://gitee.com/W4j1e/pic/raw/master/img/ts.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/ts.jpg" srcset="data:image/png;base64,666" alt="酷推"></p>
+<h2 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h2><p>很多事情其实都需要自己不断去试错，从错误中找到问题的根源，然后解决问题。各个领域的前辈们都开发了许多东西，我们都是站在巨人的肩膀上去造轮子，这是一件很幸福的事。当然这件事也让我有一种想要好好学学javascript的念头，毕竟学无止境嘛。</p>
+<p>2020.11.30   By W4J1e</p>
 
   
   
@@ -419,7 +404,7 @@
           <blockquote>
             
               
-                <p><a href=https://w4j1e.gitee.io/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/>https://w4j1e.gitee.io/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/</a></p>
+                <p><a href=https://w4j1e.gitee.io/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/>https://w4j1e.gitee.io/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/</a></p>
               
             
           </blockquote>
@@ -444,10 +429,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-27T22:23:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T13:17:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 27, 2020</p>
+    <p>更新于：Nov 30, 2020</p>
   </a>
 </div>
 
@@ -456,7 +441,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%97%E6%AD%8C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>诗歌</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络</p></a></div>
 
 
         
@@ -469,11 +454,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.gitee.io/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/&title=你的神是一位少年 - W4J1e's blog&summary=在阳光里翩翩起舞，
-抖落发间的寒气。
-写下一首明媚的诗，
-是清晨绽开的花朵，
-于黄昏时凋零。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.gitee.io/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary="
           
           >
           
@@ -485,11 +466,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.gitee.io/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/&title=你的神是一位少年 - W4J1e's blog&summary=在阳光里翩翩起舞，
-抖落发间的寒气。
-写下一首明媚的诗，
-是清晨绽开的花朵，
-于黄昏时凋零。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.gitee.io/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary="
           
           >
           
@@ -501,11 +478,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.gitee.io/2020/11/24/%E4%BD%A0%E7%9A%84%E7%A5%9E%E6%98%AF%E4%B8%80%E4%BD%8D%E5%B0%91%E5%B9%B4/&title=你的神是一位少年 - W4J1e's blog&summary=在阳光里翩翩起舞，
-抖落发间的寒气。
-写下一首明媚的诗，
-是清晨绽开的花朵，
-于黄昏时凋零。"
+          href="http://service.weibo.com/share/share.php?url=https://w4j1e.gitee.io/2020/11/30/%E9%80%9A%E8%BF%87CoolPush%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81Valine%E8%AF%84%E8%AE%BA/&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary="
           
           >
           
@@ -535,17 +508,14 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/11/25/%E5%A4%A7%E9%9B%A8%E8%BF%87%E5%90%8E%EF%BC%8C%E9%BB%8E%E6%98%8E%E4%BB%A5%E5%89%8D/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>大雨过后，黎明以前</p>
-          <p class='content'>鼠又回来了，在2020年新冠肺炎肆虐全球的时候，他从非洲的某个国家回来，下飞机的第一件事就是告诉我他回来了。
-其实这不是什么新鲜事，每年他都会回来一两次，而且每次都会来见我。只是目前的生活状态使...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/11/24/update/'>
-          <p class='title'>更新日志<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>2020.11.30：
-①弃用Server酱推送，启用CoolPush推送，现在评论我会在QQ收到提醒了（感谢@xuthus大佬深夜帮忙，今天中午检查页面加载，解决了oneclick事件报错）；...</p>
+        <a class='next' href='/2020/11/27/1997/'>
+          <p class='title'>1997<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>再次来到杰的酒吧是八月上旬，燥热的天气始终无法让人心安。
+我推开门，一股混杂着各种气味的空气迎面扑来。杰正在给一位客人调酒，看到我的那一瞬间他有些惊喜，随即点头示意我坐下来。
+
+
+“什么时候回来...</p>
         </a>
       
     </div>
@@ -610,6 +580,20 @@ valineButton.onclick = send_valine;
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-text">操作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0%EF%BC%9A"><span class="toc-text">后记：</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -626,7 +610,7 @@ valineButton.onclick = send_valine;
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="你的神是一位少年";
+  pdata.postTitle="通过CoolPush实时推送Valine评论";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
