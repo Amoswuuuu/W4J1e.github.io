@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>分類：日志 - W4J1e&#39;s blog</title>
+  <title>Category: 日志 - W4J1e&#39;s blog</title>
   
 
   
@@ -347,7 +347,7 @@
       
         <div>
           <a class='readmore' href='/2020/11/27/1997/'>
-            閱讀全文
+            Read More
           </a>
         </div>
       
@@ -392,7 +392,7 @@
       
         <div>
           <a class='readmore' href='/2020/11/25/%E5%A4%A7%E9%9B%A8%E8%BF%87%E5%90%8E%EF%BC%8C%E9%BB%8E%E6%98%8E%E4%BB%A5%E5%89%8D/'>
-            閱讀全文
+            Read More
           </a>
         </div>
       
@@ -440,7 +440,7 @@
       
         <div>
           <a class='readmore' href='/2020/11/24/update/'>
-            閱讀全文
+            Read More
           </a>
         </div>
       
@@ -658,7 +658,7 @@
       
     
       
-        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
@@ -670,11 +670,11 @@
       
     
       
-        本站使用
+        Use
         <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6" target="_blank" class="codename">Volantis</a>
-        作為主題，總訪問量為
+        as theme, total visits
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
+          times
         
       
     
@@ -838,12 +838,12 @@ var loadCSS = function( href, before, media, attributes ){
   <div id="rightmenu-wrapper">
     <ul class="list-v rightmenu" id="rightmenu-content">
       <li class='option'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>複製文本</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>Copy Text</a>
         <hr id='hr-text'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>複製鏈接</a>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新標籤頁打開</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
         <hr id='hr-href'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>複製圖片地址</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
         <hr id='hr-src'>
       </li>
       
@@ -1237,6 +1237,46 @@ var loadCSS = function( href, before, media, attributes ){
   $(function () {
     pjax_valine();
   });
+
+  <script>
+  //拷贝如下代码，将其放置于加载valine组件的layout中
+
+  //检测推送 Skey替换
+  var pushLink = "https://push.xuthus.cc/send/7960ebaddbc3118f6fd8cc86a86d4840";
+  //推送的网站名称
+  var siteName = "";
+
+  var valineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+  var title = siteName + "上又有新评论啦~!\n";
+
+  function send_valine() {
+    //获取元素信息
+    var pagename = document.title;
+    var pageurl = document.URL;
+    var pushtime = new Date();
+    var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+    content =
+      title +
+      "昵称：" + vnick +
+      "\n邮箱：" + vmail +
+      "\n网站地址：" + vlink +
+      "\n文章标题：" + pagename +
+      "\n评论内容：" + veditor +
+      "\n文章链接：" + pageurl +
+      "\n评论时间" + pushtime.toLocaleString() + "\n";
+    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+    httpRequest.open("POST", pushLink, true); //第二步：打开连接
+    httpRequest.setRequestHeader(
+      "Content-type",
+      "application/json"
+    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(content); //发送请求 将情头体写在send中
+  }
+
+  valineButton.onclick = send_valine;//点击事件
 </script>
 
 
