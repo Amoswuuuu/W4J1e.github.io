@@ -1206,7 +1206,6 @@ var loadCSS = function( href, before, media, attributes ){
   var pushLink = "https://push.xuthus.cc/send/7960ebaddbc3118f6fd8cc86a86d4840";
   //推送的网站名称
   var siteName = "W4J1e's blog";
-
   var valineButton = document.getElementsByClassName("vsubmit vbtn")[0];
   var title = siteName + "上又有新评论啦~!\n";
 
@@ -1235,10 +1234,10 @@ var loadCSS = function( href, before, media, attributes ){
     httpRequest.send(content); //发送请求 将情头体写在send中
   }
 
-    valineButton.onclick = send_valine;//点击事件
-  }
+    valineButton.onclick = send_valine;  //点击事件
+	
+}
 </script>
-
 
 
 

@@ -514,6 +514,12 @@
   
     <div class="prev-next">
       
+        <a class='prev' href='/posts/20190404.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>这个世界会好吗？</p>
+          <p class='content'>分享一首音樂，這應該是南京李先生最受人喜歡的歌曲之一。從第一次發佈以來有許多許多的版本，每次的演唱會似乎都會唱，這只是其中一個版本。
+自從他因爲“行爲不端”被封殺以來，很難直接聽到他的音樂了，但...</p>
+        </a>
+      
       
         <a class='next' href='/posts/40768.html'>
           <p class='title'>通过CoolPush实时推送Valine评论<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
@@ -1275,7 +1281,6 @@ var loadCSS = function( href, before, media, attributes ){
   var pushLink = "https://push.xuthus.cc/send/7960ebaddbc3118f6fd8cc86a86d4840";
   //推送的网站名称
   var siteName = "W4J1e's blog";
-
   var valineButton = document.getElementsByClassName("vsubmit vbtn")[0];
   var title = siteName + "上又有新评论啦~!\n";
 
@@ -1304,10 +1309,10 @@ var loadCSS = function( href, before, media, attributes ){
     httpRequest.send(content); //发送请求 将情头体写在send中
   }
 
-    valineButton.onclick = send_valine;//点击事件
-  }
+    valineButton.onclick = send_valine;  //点击事件
+	
+}
 </script>
-
 
 
 
