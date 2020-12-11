@@ -5,6 +5,10 @@
   <!-- SEO相关 -->
   
     
+      
+        <meta name="robots" content="noindex,follow">
+      
+    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,15 +23,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>通过CoolPush实时推送Valine评论 - W4J1e&#39;s blog</title>
-  
-    <meta name="keywords" content="网络">
+  <title>W4J1e&#39;s blog</title>
   
 
-  
-    <meta name="description" content="前言：在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。
-①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；
-②Qmsg酱：">
   
 
   <!-- feed -->
@@ -303,7 +301,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post search' style="display: none;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -364,259 +362,169 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-
-
-  
-  <div class="article-meta" id="top">
+  <section class="post-list">
     
     
-    
-      <h1 class="title">
-        通过CoolPush实时推送Valine评论
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>W4J1e</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 30, 2020</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
       
-      <div id="lc-pv" data-title="通过CoolPush实时推送Valine评论" data-path="/posts/40768.html">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/posts/44323.html">
+        大雨过后，黎明以前
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>鼠又回来了，在2020年新冠肺炎肆虐全球的时候，他从非洲的某个国家回来，下飞机的第一件事就是告诉我他回来了。</p>
+<p>其实这不是什么新鲜事，每年他都会回来一两次，而且每次都会来见我。只是目前的生活状态使我越来越无暇顾及对生活的感受。每一次他来见我，都会带来一些新的玩意，而我却早已失去了记录的热情。</p>
+    
   </div>
-
-
-          
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-25</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>
         
       </div>
-    
-  </div>
-
-
-  
-  <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。</p>
-<p>①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；</p>
-<p>②Qmsg酱：<a id="more"></a>参考了多个文档多次配置，但是评论测试时，日志显示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QQ提醒失败: Request failed with status code 404</span><br></pre></td></tr></table></figure>
-
-<p>我认为可能是Qmsg酱推送出了故障，于是弃用。</p>
-<p>③CoolPush：这是我无意中发现的一个推送服务，由大佬@xuthus开发，能够实时推送评论相关内容到QQ。</p>
-<h3 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h3><p>①我是采用的hexo+volantis主题，volantis内置了许多第三方评论插件，我启用的是valine。其它主题可能略有不同。</p>
-<p>②打开<a href="https://cp.xuthus.cc/">https://cp.xuthus.cc/</a> ，登陆，可以选择github、gitee和OSC登陆；</p>
-<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" srcset="data:image/png;base64,666" alt="登陆"></p>
-<p>②绑定QQ号，选择机器人并添加机器人为好友；</p>
-<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" srcset="data:image/png;base64,666" alt="绑定QQ和选择机器人"></p>
-<p>③点击上方说明，下拉到“配合valine进行推送”，复制框内代码粘贴到script.ejs底部，将skey替换成你自己的，路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的博客\themes\volantis\layout\_third-party\comments\valine\</span><br></pre></td></tr></table></figure>
-
-<p>④需要注意的是，目前（2020.11.30 13:00），大佬提供的js脚本需要稍稍修改，否则会提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</span><br></pre></td></tr></table></figure>
-
-<p>通过百度，学习csdn上的一篇文章，发现需要用window.οnlοad=function(){ }将代码包裹。</p>
-<p>故完整代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> pushLink = <span class="string">&quot;https://push.xuthus.cc/send/Skey&quot;</span>;</span><br><span class="line"><span class="comment">//推送的网站名称</span></span><br><span class="line"><span class="keyword">var</span> siteName = <span class="string">&quot;&quot;</span>; </span><br><span class="line"><span class="keyword">var</span> valineButton = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vsubmit vbtn&quot;</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> title = siteName + <span class="string">&quot;上又有新评论啦~!\n&quot;</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">send_valine</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">//获取元素信息</span></span><br><span class="line"><span class="keyword">var</span> pagename = <span class="built_in">document</span>.title;</span><br><span class="line"><span class="keyword">var</span> pageurl = <span class="built_in">document</span>.URL;</span><br><span class="line"><span class="keyword">var</span> pushtime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> vnick = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vnick vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> vmail = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vmail vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> vlink = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vlink vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line"><span class="keyword">var</span> veditor = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;veditor vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">content =</span><br><span class="line">  title +</span><br><span class="line">  <span class="string">&quot;昵称：&quot;</span> + vnick +</span><br><span class="line">  <span class="string">&quot;\n邮箱：&quot;</span> + vmail +</span><br><span class="line">  <span class="string">&quot;\n网站地址：&quot;</span> + vlink +</span><br><span class="line">  <span class="string">&quot;\n文章标题：&quot;</span> + pagename +</span><br><span class="line">  <span class="string">&quot;\n评论内容：&quot;</span> + veditor +</span><br><span class="line">  <span class="string">&quot;\n文章链接：&quot;</span> + pageurl +</span><br><span class="line">  <span class="string">&quot;\n评论时间&quot;</span> + pushtime.toLocaleString() + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> httpRequest = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//第一步：创建需要的对象</span></span><br><span class="line">httpRequest.open(<span class="string">&quot;POST&quot;</span>, pushLink, <span class="literal">true</span>); <span class="comment">//第二步：打开连接</span></span><br><span class="line">httpRequest.setRequestHeader(</span><br><span class="line">  <span class="string">&quot;Content-type&quot;</span>,</span><br><span class="line">  <span class="string">&quot;application/json&quot;</span></span><br><span class="line">); <span class="comment">//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）</span></span><br><span class="line">httpRequest.send(content); <span class="comment">//发送请求 将情头体写在send中</span></span><br><span class="line">&#125;</span><br><span class="line">valineButton.onclick = send_valine;<span class="comment">//点击事件</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>⑤hexo clean &amp; hexo d ，enjoy it！</p>
-<p> <img src="https://gitee.com/W4j1e/pic/raw/master/img/ts.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/ts.jpg" srcset="data:image/png;base64,666" alt="酷推"></p>
-<h3 id="后记："><a href="#后记：" class="headerlink" title="后记："></a>后记：</h3><p>很多事情其实都需要自己不断去试错，从错误中找到问题的根源，然后解决问题。各个领域的前辈们都开发了许多东西，我们都是站在巨人的肩膀上去造轮子，这是一件很幸福的事。当然这件事也让我有一种想要好好学学javascript的念头，毕竟学无止境嘛。</p>
-<p>2020.11.30   By W4J1e</p>
-
-  
-  
-    
-    <div class='footer'>
       
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p><a href=https://w4j1e.xyz/posts/40768.html>https://w4j1e.xyz/posts/40768.html</a></p>
-              
-            
-          </blockquote>
+        <div>
+          <a class='readmore' href='/posts/44323.html'>
+            阅读全文
+          </a>
         </div>
-      
       
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-10T21:30:25+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 10, 2020</p>
-  </a>
 </div>
 
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/40768.html&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary=前言：在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。
-①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；
-②Qmsg酱："
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/40768.html&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary=前言：在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。
-①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；
-②Qmsg酱："
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/40768.html&title=通过CoolPush实时推送Valine评论 - W4J1e's blog&summary=前言：在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。
-①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；
-②Qmsg酱："
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        
-        <div class='hoverbox'>
-          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
-          <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACPklEQVR42u3bO3YDMQgAQN3/0k6fRuIjJ8uOutgbi8END/D6vPQscHBwcHDwQfCVPL///2uBV+MFBwcHBwcfCI9efBpQF6QrXnBwcHBw8Mnw7MVZQPS+arzg4ODg4ODg957fFiDg4ODg4ODg1yG757oTAQ4ODg4ODp5o0Dcn5rTh8eeTFHBwcHBw8H8Ej55qIm4lchsvODg4ODj4IHj1nF54a0EwHC84ODg4OPggeFcDv2uAH30/mmhwcHBwcPBJ8NNATxNTHQBUC6ZwIwIcHBwcHPzB8PaG/Zc+r30jAhwcHBwc/IHwauFxe2Eg+vr2OXBwcHBw8MHwcIP+0sDhdJEg+sWBg4ODg4NPgp9Csw2B7EC/a1Fh24EBBwcHBwcfAI8WBl0JqQ4KwoUSODg4ODj4i+HRU204RD/neKAADg4ODg4+AH7auI9elF3kqxZG4UkKODg4ODj4g+HRxkM2IdEFhOpgIly5gYODg4ODPxBeLUSqidoOAIIFzfFAARwcHBwc/AXwWwODaGKqBQ84ODg4OPhE+O3Gf3YQ0V1QgYODg4ODT4TfWuDLJjZaSEXfBwcHBwcHnwRfyXMLVi2QjgcK4ODg4ODgg+DZgqW7oKnet30dHBwcHBx8MDxbQFQHAKvpbL84cHBwcHBw8PAP57MLAad/pwcK4ODg4ODg4J9ogNVGRLbBAQ4ODg4OPhmeHSicNhiiCetaMAAHBwcHB58Mrw4CqoVJGJAtfMDBwcHBwQfB33bAwcHBwcEHnB84jwnUqXKAEAAAAABJRU5ErkJggg==">
           </div>
-        </div>
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
         
       
-    </div>
-  </div>
-
-
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
   
   
-
   
-    <div class="prev-next">
-      
-        <a class='prev' href='/posts/30606.html'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Sunny Days</p>
-          <p class='content'>年轻的时候觉得说出“孤独”是一件很可耻的事，就像是身边的人明明看到你很快乐你自己却觉得孤独一样，没有人会相信。
-  而现在，我快24了，仍然不知道应该怎样来合理地描述自己的生活，也不知道该怎样来...</p>
-        </a>
-      
-      
-        <a class='next' href='/posts/30605.html'>
-          <p class='title'>1997<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>再次来到杰的酒吧是八月上旬，燥热的天气始终无法让人心安。
-我推开门，一股混杂着各种气味的空气迎面扑来。杰正在给一位客人调酒，看到我的那一瞬间他有些惊喜，随即点头示意我坐下来。
-
-
-“什么时候回来...</p>
-        </a>
-      
-    </div>
   
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+    <h2 class="article-title" >
+      <a href="/posts/17341.html">
+        你的神是一位少年
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>在阳光里翩翩起舞，</p>
+<p>抖落发间的寒气。</p>
+<p>写下一首明媚的诗，</p>
+<p>是清晨绽开的花朵，</p>
+<p>于黄昏时凋零。</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E8%AF%97%E6%AD%8C/">诗歌</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/posts/17341.html'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
 </div>
 
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/posts/34223.html">
+        更新日志
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <div class="timeline"><div class="timenode"><div class="meta"><p><p>2020.12.11</p>
+</p></div><div class="body"><p>①为更新日志增加时间线；<br>②适配了视频播放窗口大小；<br>③将背景图改为固定全屏。</p></div></div>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/posts/34223.html'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
 
-  </article>
+</div>
 
-
-
-
+          </div>
+        
+      
+    
+  </section>
+  
+    
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
+    
+  
 
 
 </div>
@@ -696,6 +604,35 @@
   
     
     
+
+<section class="widget text shadow desktop">
+  
+  <header>
+    
+      <a href='./posts/34223.html'><i class="fas fa-upload fa-fw" aria-hidden="true"></i><span class='name'>更新提要</span></a>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <p>①为更新日志增加时间线；</p>
+
+    
+      <p>②适配了视频播放窗口大小；</p>
+
+    
+      <p>③将背景图改为固定全屏。</p>
+
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
   
 
   <section class="widget category shadow desktop">
@@ -751,6 +688,8 @@
     </div>
   </section>
 
+
+  
 
   
 
@@ -882,6 +821,29 @@
 
   
 
+  
+    
+    
+
+<section class="widget qrcode shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-credit-card fa-fw" aria-hidden="true"></i><span class='name'>扫一扫加我好友</span>
+    
+  </header>
+
+
+  <div class='content article-entry'>
+    
+      <img src='https://gitee.com/W4j1e/pic/raw/master/img/wx.jpg'
+      />
+    
+  </div>
+</section>
+
+  
+
 
 </aside>
 
@@ -894,8 +856,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="通过CoolPush实时推送Valine评论";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
