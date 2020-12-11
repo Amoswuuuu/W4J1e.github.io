@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>超级有用的资源</title>
+      <link href="posts/needpass.html"/>
+      <url>posts/needpass.html</url>
+      
+        <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容."><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="在这里输入密码" /><label>在这里输入密码</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="99ba95c2c511f238c6668e6f423000596241a33b9b756f80a5c6df94c6cde00c">805eb3082975cd8c1de671a048dc16ac072f050002a1a48706b7cc1e15f776425f1fae230e171786409af68e2dde2b4b3ade3cdc4c296671c856a573bb4aba7a35f76c401a4aa3add2a9b440af1c76cddc3a2ab3b421d0663bfdc8e36204a2252076ff499f3eeca175a65bd7e36fef54</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 日志 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>贰拾陆</title>
       <link href="posts/ershiliu.html"/>
       <url>posts/ershiliu.html</url>

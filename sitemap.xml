@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://w4j1e.xyz/posts/needpass.html</loc>
+    
+    <lastmod>2020-12-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://w4j1e.xyz/posts/lizhi.html</loc>
     
     <lastmod>2020-12-11</lastmod>
@@ -116,14 +123,14 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
+    <loc>https://w4j1e.xyz/tags/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://w4j1e.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
