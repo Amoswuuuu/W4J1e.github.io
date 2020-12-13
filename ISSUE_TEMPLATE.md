@@ -2,11 +2,10 @@
 <!-- 请在双引号中填写 -->
 ```json
 {
-    "title": "",
-    "description": "",
-    "screenshot": "",
-    "url": "",
-    "avatar": "",
-    "version": "版本：^4.0"
+      title:   # 名称
+      avatar:  # 头像
+      url:  # 链接
+      screenshot:  # 截图
+      description:  # 描述
 }
 ```

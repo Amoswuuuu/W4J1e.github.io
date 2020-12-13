@@ -193,20 +193,6 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/valine/</loc>
-    <lastmod>2020-12-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/js/</loc>
-    <lastmod>2020-12-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://w4j1e.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
@@ -222,6 +208,20 @@
   
   <url>
     <loc>https://w4j1e.xyz/tags/%E7%8E%B0%E5%9C%BA/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/valine/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/js/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
