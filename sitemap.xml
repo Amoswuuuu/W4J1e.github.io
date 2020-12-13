@@ -2,7 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://w4j1e.xyz/friends/index.html</loc>
+    <loc>https://w4j1e.xyz/posts/lizhi.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/40768.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/17341.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/ershiliu.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/44323.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/needpass.html</loc>
     
     <lastmod>2020-12-13</lastmod>
     
@@ -11,63 +46,35 @@
   <url>
     <loc>https://w4j1e.xyz/posts/34223.html</loc>
     
-    <lastmod>2020-12-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/needpass.html</loc>
-    
-    <lastmod>2020-12-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/lizhi.html</loc>
-    
-    <lastmod>2020-12-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/40768.html</loc>
-    
-    <lastmod>2020-12-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/17341.html</loc>
-    
-    <lastmod>2020-12-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/ershiliu.html</loc>
-    
-    <lastmod>2020-12-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/posts/44323.html</loc>
-    
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://w4j1e.xyz/posts/30606.html</loc>
     
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://w4j1e.xyz/posts/30605.html</loc>
     
-    <lastmod>2020-12-10</lastmod>
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/posts/24h2.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/friends/index.html</loc>
+    
+    <lastmod>2020-12-13</lastmod>
     
   </url>
   
@@ -109,7 +116,42 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/%E6%9B%B4%E6%96%B0/</loc>
+    <loc>https://w4j1e.xyz/tags/%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/%E8%99%9A%E6%9E%84/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/%E5%A4%9C%E6%9D%A5%E9%9D%9E/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/hexo/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/volantis/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/update/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -123,6 +165,20 @@
   </url>
   
   <url>
+    <loc>https://w4j1e.xyz/tags/%E5%88%9B%E4%BD%9C/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/%E7%94%9F%E6%97%A5%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://w4j1e.xyz/tags/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
@@ -130,7 +186,42 @@
   </url>
   
   <url>
+    <loc>https://w4j1e.xyz/tags/%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://w4j1e.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/%E6%9D%8E%E5%BF%97/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/%E7%8E%B0%E5%9C%BA/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/valine/</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/js/</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
