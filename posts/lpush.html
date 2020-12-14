@@ -19,9 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>歌单 - W4J1e&#39;s blog</title>
+  <title>最新版基于Leancloud推送Valine评论到QQ - W4J1e&#39;s blog</title>
+  
+    <meta name="keywords" content="Valine,hexo,Leancloud,Qmsg">
   
 
+  
+    <meta name="description" content="在四环路上有一家24小时便利店,说是24小时便利店，其实它往往只在晚上才会开始营业。">
   
 
   <!-- feed -->
@@ -429,7 +433,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper page search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -490,7 +494,7 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md blur article-type-page" id="page" itemscope itemprop="blogPost">
+  <article class="article post white-box reveal md blur article-type-post" id="post" itemscope itemprop="blogPost">
   
 
 
@@ -500,7 +504,7 @@
     
     
       <h1 class="title">
-        歌单
+        最新版基于Leancloud推送Valine评论到QQ
       </h1>
       <div class='new-meta-box'>
         
@@ -517,6 +521,13 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/hexo/">hexo</a>
+    </a>
+  </div>
+
 
           
         
@@ -524,7 +535,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Dec 13, 2020</p>
+    <p>发布于：Dec 14, 2020</p>
   </a>
 </div>
 
@@ -535,7 +546,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="歌单" data-path="/c/yy.html">
+      <div id="lc-pv" data-title="最新版基于Leancloud推送Valine评论到QQ" data-path="/posts/lpush.html">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -552,70 +563,111 @@
 
 
   
-  <div class="note radiation blue"><p>网易云歌单 最初主要是后摇，但是后来也混进了许多类型的音乐，如纯音乐、电音、史诗</p></div>
-<!-- require APlayer -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css">
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在许久之前尝试过按照大佬们的文档在leancloud配置Qmsg酱的推送，但是一直没有成功，后来用js推送的方式也不太稳定，</p>
+<p>&emsp;&emsp;此前日志报错代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QQ提醒失败: Request failed with status code 404</span><br></pre></td></tr></table></figure>
 
-<script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script>
-
-<!-- require MetingJS -->
-
-<script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script>
-
-<p><meting-js
-    server="netease"
-    type="playlist"
-    id="2709509873"
-    list-folded="true"
-    mutex=“true”><br></meting-js></p>
-<details red><summary> QQ音乐歌单 向死而生|LanaDelRey </summary>
+<p>&emsp;&emsp;昨晚向Qmsg酱的开发者大佬@蝶衣 请教了一会，于是再度研究了一下大佬们的文档和代码，找到了头绪。</p>
+<p>&emsp;&emsp;此内容基于大佬 @小康 的内容更新，由于大佬不再用valine评论系统，因此放弃了对该项目的维护，所以我folk过来之后决定长期维护下去。</p>
+<p>&emsp;&emsp;废话不多说，下面开始准备折腾磨人的Qmsg酱吧！</p>
+<h2 id="认领一只Qmsg酱"><a href="#认领一只Qmsg酱" class="headerlink" title="认领一只Qmsg酱"></a>认领一只Qmsg酱</h2><h3 id="1-打开Qmsg酱官网-可以选择QQ登陆"><a href="#1-打开Qmsg酱官网-可以选择QQ登陆" class="headerlink" title="1.打开Qmsg酱官网,可以选择QQ登陆"></a>1.打开Qmsg酱官网,可以选择QQ登陆</h3><p> 点击这里➡  <a href="https://qmsg.zendee.cn/">Qmsg酱官网</a></p>
+<h3 id="2-选择你中意的Qmsg酱并且添加她为QQ好友"><a href="#2-选择你中意的Qmsg酱并且添加她为QQ好友" class="headerlink" title="2.选择你中意的Qmsg酱并且添加她为QQ好友"></a>2.选择你中意的Qmsg酱并且添加她为QQ好友</h3><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/clip_image002.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/clip_image002.jpg" srcset="data:image/png;base64,666" alt="图形用户界面, 文本, 应用程序  描述已自动生成"></p>
+<h3 id="3-添加你要接收推送的QQ号码"><a href="#3-添加你要接收推送的QQ号码" class="headerlink" title="3.添加你要接收推送的QQ号码"></a>3.添加你要接收推送的QQ号码</h3><p>&emsp;&emsp;在选择Qmsg酱的旁边菜单添加，描述随意。</p>
+<h3 id="4-拼接你的接口地址"><a href="#4-拼接你的接口地址" class="headerlink" title="4.拼接你的接口地址"></a>4.拼接你的接口地址</h3><p>&emsp;&emsp;点击最右边的KEY，可以看到一长串字符，复制下来备用：</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/key.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/key.jpg" srcset="data:image/png;base64,666" alt="key"></p>
+<h3 id="5-测试你的Qmsg是否认领成功"><a href="#5-测试你的Qmsg是否认领成功" class="headerlink" title="5.测试你的Qmsg是否认领成功"></a>5.测试你的Qmsg是否认领成功</h3><p>&emsp;&emsp;点击文档，查看接口地址,复制下来，把你的KEY粘贴在最后：</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/adr.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/adr.jpg" srcset="data:image/png;base64,666" alt="adr"></p>
+<p>&emsp;&emsp;然后将接口地址粘贴到浏览器地址栏，在末尾加上?msg= ，在等于后面随便输入文字，回车，如果成功你会看到Qmsg酱给你发来的消息：</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/test.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/test.jpg" srcset="data:image/png;base64,666" alt="test"></p>
+<h2 id="在Leancloud创建应用"><a href="#在Leancloud创建应用" class="headerlink" title="在Leancloud创建应用"></a>在Leancloud创建应用</h2><details green><summary> 相信你有一个应用服务于valine的应用了，如果没有请参考Valine的文档 </summary>
               <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806422707"    list-folded="true"    mutex=“true”><br></meting-js></p>
+              <p>Valine作者文档： <a href="https://valine.js.org/quickstart.html">Valine快速开始</a>  </p>
               </div>
             </details>
 
-<details green><summary> QQ音乐歌单 撒旦歌者|MarilynManson </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="1779394777"    list-folded="true"    mutex=“true”><br></meting-js></p>
-              </div>
-            </details>
+<h2 id="通过云引擎部署项目"><a href="#通过云引擎部署项目" class="headerlink" title="通过云引擎部署项目"></a>通过云引擎部署项目</h2><h3 id="1-在云引擎部署"><a href="#1-在云引擎部署" class="headerlink" title="1.在云引擎部署"></a>1.在云引擎部署</h3><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/deply.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/deply.jpg" srcset="data:image/png;base64,666" alt="deply"></p>
+<p>&emsp;&emsp;在Git部署的地址栏里输入这个仓库地址，然后点击部署：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;W4J1e&#x2F;Heox-Valine-ASPush</span><br></pre></td></tr></table></figure>
 
-<details red><summary> QQ音乐歌单 三十而立|胡彦斌 </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806424693"    list-folded="true"    mutex=“true”><br></meting-js></p>
-              </div>
-            </details>
+<h3 id="2-配置变量"><a href="#2-配置变量" class="headerlink" title="2.配置变量"></a>2.配置变量</h3><p>最后记得保存（本文只谈Qmsg酱推送，其它如server酱、邮件推送和评论后台管理可以自行参考原作者的配置）：</p>
+<p>&emsp;&emsp;变量参数如下：</p>
+<table>
+<thead>
+<tr>
+<th><strong>变量名</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>示例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>[必填]网站名称</td>
+<td>W4J1e’s blog</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td>[必填] 博客地址，末尾不要加 <code>/</code></td>
+<td><a href="https://w4j1e.xyz/">Https://w4j1e.xyz</a></td>
+</tr>
+<tr>
+<td>COMMENT</td>
+<td>[必填] 评论 div 的 ID 名</td>
+<td>#post-comment</td>
+</tr>
+<tr>
+<td>QMSG_KEY</td>
+<td>[必填] Qmsg酱的KEY</td>
+<td>xxxxx</td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>[必填] Qmsg酱发送的 qq，支持多个，用英文逗号分隔即可</td>
+<td>892599923</td>
+</tr>
+<tr>
+<td>QQ_SHAKE</td>
+<td>[可选]，填写代表发送 QQ 戳一戳</td>
+<td>true</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp;示例（我初次配置的时候添加了邮件推送，一直没删）：</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/env.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/env.jpg" srcset="data:image/png;base64,666" alt="env"></p>
+<h3 id="3-运行部署"><a href="#3-运行部署" class="headerlink" title="3.运行部署"></a>3.运行部署</h3><p>&emsp;&emsp;点击左侧“部署”，在git部署下面再次点击部署。</p>
+<h3 id="4-测试推送"><a href="#4-测试推送" class="headerlink" title="4.测试推送"></a>4.测试推送</h3><p>&emsp;&emsp;打开你的博客，用另一个身份发一条评论测试一下吧。</p>
+<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/qmsg.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/qmsg.jpg" srcset="data:image/png;base64,666" alt="qmsg"></p>
+<p>&emsp;&emsp;注：前一条推送的评论使用了原版的推送模板，我已在源码中去除这些可能无法正确显示的表情，新版推送很简洁，以后修改与否视情况而定。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>&emsp;&emsp;如果没有推送成功，请在leancloud中查看日志，并将报错内容反馈于我。</p>
+<p>&emsp;&emsp;后续有时间了会逐渐完善这份文档和代码仓库，毕竟打工人，不像蝶衣大佬一样可以休！产！假！</p>
 
-<details green><summary> QQ音乐歌单 史诗游戏|LifeIsGG </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806394254"    list-folded="true"    mutex=“true”><br></meting-js></p>
-              </div>
-            </details>
-
-<details red><summary> QQ音乐歌单 独立音乐|摇滚民谣 </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806408930"    list-folded="true"    mutex=“true”><br></meting-js></p>
-              </div>
-            </details>
-
-<details green><summary> QQ音乐歌单 台湾乐团|Frandé </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806423582"    list-folded="true"    mutex=“true”><br></meting-js></p>
-              </div>
-            </details>
-
-<details blue><summary> QQ音乐歌单 迷雾之森|丁可 </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="3806356800"    list-folded="true"    mutex="true"><br></meting-js></p>
-              </div>
-            </details>
-
-<details red><summary> QQ音乐歌单 日常洗澡|华语集萃 </summary>
-              <div class='content'>
-              <!-- require APlayer --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/APlayer.min.js"></script><!-- require MetingJS --><script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Meting.min.js"></script><p><meting-js    server="tencent"    type="playlist"    id="6937447921"    list-folded="true"    mutex="true"><br></meting-js></p>
-              </div>
-            </details>
   
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>该内容为 W4J1e 原创，未经允许不得转载</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://w4j1e.xyz/posts/lpush.html>https://w4j1e.xyz/posts/lpush.html</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
   
   
     
@@ -625,10 +677,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-13T22:26:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-14T13:55:22+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 13, 2020</p>
+    <p>更新于：Dec 14, 2020</p>
   </a>
 </div>
 
@@ -636,6 +688,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Valine/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Valine</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Leancloud/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Leancloud</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Qmsg/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Qmsg</p></a></div>
+
 
         
       
@@ -647,7 +702,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/c/yy.html&title=歌单 - W4J1e's blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=在四环路上有一家24小时便利店,说是24小时便利店，其实它往往只在晚上才会开始营业。"
           
           >
           
@@ -659,7 +714,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/c/yy.html&title=歌单 - W4J1e's blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=在四环路上有一家24小时便利店,说是24小时便利店，其实它往往只在晚上才会开始营业。"
           
           >
           
@@ -671,7 +726,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/c/yy.html&title=歌单 - W4J1e's blog&summary="
+          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=在四环路上有一家24小时便利店,说是24小时便利店，其实它往往只在晚上才会开始营业。"
           
           >
           
@@ -685,7 +740,7 @@
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACR0lEQVR42u3aSXLDMAwEQP3/08kLXOIAUMWBmje5tLB5GgO4fl66LnBwcHBw8EXwq7huP/Dhvrvf777X3S84ODg4OPhG+HEA+LCRKvj0AMb2Cw4ODg4Ovhhe/fDde6oB5/T6dL/g4ODg4ODg9QLDFBQcHBwcHBx84EWHjYZuIwEcHBwcHBx8vqGQHkh1AODrOing4ODg4OBfBC8PzP3R9diAHzg4ODg4+D+GP7XSwkQ3qBzvCxwcHBwcfBG8GyiqjYGpgkM8qAAODg4ODr4QPjXQN1VQON1f3OgABwcHBwdfDE83Wg0Wp++ZPihwcHBwcPBN8DSYpIWB6iDfdIACBwcHBwffDJ8a4EsDzOmBjT0PDg4ODg6+ED7VEEgLCmkw6jY+wMHBwcHBN8KvcHWf6xY40gIIODg4ODj4ZngaNI4DQ3hfOlAQBxpwcHBwcPBF8OmCQDV4dAcC4wADDg4ODg6+AJ5uNA0W1cBSDUS33wUHBwcHB18Er/7x7zYGnm40lJMbODg4ODj4P4KnQSEtAKSDBWmhIg464ODg4ODgi+BpwaAK6DYQpgIVODg4ODj4Jnh3VQcFpu873Q84ODg4OPgm+FRgeKqQUB0wAAcHBwcHfxP8qUZ8+p6nChvg4ODg4OBvgJ82DtJAMXUAj3dSwMHBwcHBXwTvBqGpQYPjgwQHBwcHBwcvF/7T57oFkMcLEeDg4ODg4F8E7zYUpgoNTwUqcHBwcHDwjfDqgN90weBqrtuABA4ODg4Ovgj+tgUODg4ODr5g/QLRgT85/Zy02gAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACRUlEQVR42u3cQXLDQAgEQP3/084LXNkBVGWh3lvsxKI3FzJQuT4vPRc4ODg4OPgi+FU86c+PFd6tFxwcHBwcfCE8ffDp61OQqXrBwcHBwcE3w7sPPr2YKrRbLzg4ODg4OPj37682LMcNCDg4ODg4OPjt8O5AIr0IcHBwcHBw8EJA/0/wMBU4/NwkBRwcHBwc/Ifg6UmDgumvy/WCg4ODg4MvgndP2mikDc9n+ICDg4ODg2+CTwX41UBiunEZS2DAwcHBwcEfDO8G/mkjki4GjCUw4ODg4ODgD4Z3wXcVnF54vBgADg4ODg6+CJ7+gZ82IlMXmn4+ODg4ODj4G+DpgOE08J8KNqp1Hm9EgIODg4ODL4CfBgyn0OpAf2pR4biBAQcHBwcHXwDvgruAauBx3DiBg4ODg4O/CH7XYCGFpwsJ7QYGHBwcHBz8AfDTwL5b8F0Dh/JAARwcHBwcfCG8OqDvXkg3eIgX/MDBwcHBwRfA06C/2lhUFwXSi20PFMDBwcHBwR8MTxcAxgoaXggc22wEBwcHBwf/YXj1A7tBRfX99ELAwcHBwcE3w7tnKoioDhzS98HBwcHBwTfBr+I5DfynG5vTAAMcHBwcHPxN8G7D0i00XQAoByPg4ODg4OCL4XFDEC4CTF9QPBABBwcHBwcHLy/6TTUy1UUGcHBwcHBw8Po/nKsuCHSfAw4ODg4O/gZ4d6Gvuwhw+guoLiaAg4ODg4NvhFcbjWpgkX7O6evxYgA4ODg4OPiD4W874ODg4ODgC84fEJ2En6bgbYgAAAAASUVORK5CYII=">
           </div>
         </div>
       
@@ -706,6 +761,17 @@
   
   
 
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/posts/24h2.html'>
+          <p class='title'>24小时便利店<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>&emsp;&emsp;在四环路上有一家24小时便利店，说是24小时便利店，其实它往往只在晚上才会开始营业，并且便利店里除了一些日常用品之外，货架上摆放的最多得就是各式各样的啤酒。
+&emsp;...</p>
+        </a>
+      
+    </div>
   
 </article>
 
@@ -730,6 +796,29 @@
 </div>
 <aside class='l_side'>
   
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E9%A2%86%E4%B8%80%E5%8F%AAQmsg%E9%85%B1"><span class="toc-text">认领一只Qmsg酱</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80Qmsg%E9%85%B1%E5%AE%98%E7%BD%91-%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9QQ%E7%99%BB%E9%99%86"><span class="toc-text">1.打开Qmsg酱官网,可以选择QQ登陆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E4%BD%A0%E4%B8%AD%E6%84%8F%E7%9A%84Qmsg%E9%85%B1%E5%B9%B6%E4%B8%94%E6%B7%BB%E5%8A%A0%E5%A5%B9%E4%B8%BAQQ%E5%A5%BD%E5%8F%8B"><span class="toc-text">2.选择你中意的Qmsg酱并且添加她为QQ好友</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E4%BD%A0%E8%A6%81%E6%8E%A5%E6%94%B6%E6%8E%A8%E9%80%81%E7%9A%84QQ%E5%8F%B7%E7%A0%81"><span class="toc-text">3.添加你要接收推送的QQ号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8B%BC%E6%8E%A5%E4%BD%A0%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80"><span class="toc-text">4.拼接你的接口地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E4%BD%A0%E7%9A%84Qmsg%E6%98%AF%E5%90%A6%E8%AE%A4%E9%A2%86%E6%88%90%E5%8A%9F"><span class="toc-text">5.测试你的Qmsg是否认领成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Leancloud%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8"><span class="toc-text">在Leancloud创建应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="toc-text">通过云引擎部署项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">1.在云引擎部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="toc-text">2.配置变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BF%90%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="toc-text">3.运行部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E6%8E%A8%E9%80%81"><span class="toc-text">4.测试推送</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
   
     
     
@@ -1094,8 +1183,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="最新版基于Leancloud推送Valine评论到QQ";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
