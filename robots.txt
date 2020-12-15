@@ -2,5 +2,5 @@ User-agent: *
 Allow:  /
 Sitemap: https://w4j1e.gitee.io/sitemap.xml
 Sitemap: https://w4j1e.gitee.io/baidusitemap.xml
-Sitemap: https://w4j1e.js.org/sitemap.xml
-Sitemap: https://w4j1e.js.org/baidusitemap.xml
+Sitemap: https://w4j1e.xyz/sitemap.xml
+Sitemap: https://w4j1e.xyz/baidusitemap.xml
