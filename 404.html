@@ -1313,7 +1313,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/Valine.min.js"></script>
 
 
 <script>
@@ -1322,7 +1322,7 @@ var loadCSS = function( href, before, media, attributes ){
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail,link'.split(',').filter(function (item) {
+  var requiredFields = 'nick,mail,'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
