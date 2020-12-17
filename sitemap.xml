@@ -93,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/404.html</loc>
-    
-    <lastmod>2020-12-09</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://w4j1e.xyz/categories/index.html</loc>
     
     <lastmod>2020-12-09</lastmod>
@@ -179,6 +172,20 @@
   </url>
   
   <url>
+    <loc>https://w4j1e.xyz/tags/volantis/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/update/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://w4j1e.xyz/tags/%E8%AF%97%E6%AD%8C/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
@@ -214,34 +221,6 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/valine/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/volantis/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/js/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/Coolpush/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://w4j1e.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
@@ -263,7 +242,21 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/update/</loc>
+    <loc>https://w4j1e.xyz/tags/valine/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/js/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/Coolpush/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
