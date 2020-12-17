@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://w4j1e.xyz/tags/Valine/</loc>
+    <loc>https://w4j1e.xyz/tags/%E5%A4%9C%E6%9D%A5%E9%9D%9E/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -145,27 +145,6 @@
   
   <url>
     <loc>https://w4j1e.xyz/tags/hexo/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/Leancloud/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/Qmsg/</loc>
-    <lastmod>2020-12-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://w4j1e.xyz/tags/%E5%A4%9C%E6%9D%A5%E9%9D%9E/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -180,6 +159,27 @@
   
   <url>
     <loc>https://w4j1e.xyz/tags/update/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/Valine/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/Leancloud/</loc>
+    <lastmod>2020-12-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://w4j1e.xyz/tags/Qmsg/</loc>
     <lastmod>2020-12-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
