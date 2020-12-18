@@ -551,7 +551,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>111 words</p>
+      <p>101 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -651,11 +651,17 @@
     
     <br><br>
     <p>本站友链信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: W4J1e&#39;s blog</span><br><span class="line">avatar: https:&#x2F;&#x2F;gitee.com&#x2F;W4j1e&#x2F;pic&#x2F;raw&#x2F;master&#x2F;img&#x2F;dl2.png</span><br><span class="line">url: https:&#x2F;&#x2F;w4j1e.xyz</span><br><span class="line">screenshot: https:&#x2F;&#x2F;gitee.com&#x2F;W4j1e&#x2F;pic&#x2F;raw&#x2F;master&#x2F;img&#x2F;sc.jpg </span><br><span class="line">description: 努力爬上大佬的肩膀</span><br></pre></td></tr></table></figure>
-
+<pre><code>title: W4J1e&#39;s blog
+avatar: https://gitee.com/W4j1e/pic/raw/master/img/dl2.png
+url: https://w4j1e.xyz
+screenshot: https://gitee.com/W4j1e/pic/raw/master/img/sc.jpg 
+description: 努力爬上大佬的肩膀</code></pre>
 <p>欢迎各位大佬前来提交友链。可以在下方留言或者<a href="https://gitee.com/W4j1e/w4j1e/issues">点此</a> 前往gitee新建issue，必须要有名称、截图、链接。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title:  # 名称</span><br><span class="line">avatar:  # 头像</span><br><span class="line">url: # 链接</span><br><span class="line">screenshot:  # 截图</span><br><span class="line">description: # 描述</span><br></pre></td></tr></table></figure>
-
+<pre><code>title:  # 名称
+avatar:  # 头像
+url: # 链接
+screenshot:  # 截图
+description: # 描述</code></pre>
 
     
 
@@ -999,7 +1005,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Dec 18 2020 13:55:12 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Fri Dec 18 2020 14:28:16 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2020-12-18 日</div>
           
         </div>
@@ -1251,6 +1257,8 @@ var loadCSS = function( href, before, media, attributes ){
   
   
   
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/a11y-dark.css", window.volantis.loadcss);
   
 </script>
 <!-- required -->
@@ -1532,7 +1540,7 @@ var loadCSS = function( href, before, media, attributes ){
       if (href.length == 0) {
         // 选中文本
         if (window.getSelection().toString()) {
-          if ('' == 'true') {
+          if ('true' == 'true') {
             copyText.style.display = 'block';
             hrText.style.display = 'block';
           }
@@ -1643,6 +1651,61 @@ var loadCSS = function( href, before, media, attributes ){
   
 
 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
 
 
 
@@ -1834,6 +1897,13 @@ function setSearchService() {
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
 
 
 
@@ -2321,8 +2391,14 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 		  Pjax_backstretch()
         
         
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
         
         
+        
+        
+          pjax_initCopyCode();
         
         
           pjax_valine();

@@ -568,13 +568,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>877 words</p>
+      <p>834 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>4 min</p>
+      <p>3 min</p>
     </a>
   </div>
 
@@ -592,8 +592,7 @@
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。</p>
 <p>&emsp;&emsp;①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；</p>
 <p>&emsp;&emsp;②Qmsg酱：参考了多个文档多次配置，但是评论测试时，日志显示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QQ提醒失败: Request failed with status code 404</span><br></pre></td></tr></table></figure>
-
+<pre><code>QQ提醒失败: Request failed with status code 404</code></pre>
 <p>&emsp;&emsp;我认为可能是Qmsg酱<del>推送出了故障</del>，于是弃用。事实上是接口地址改了，最新配置方法：<a href="https://w4j1e.xyz/posts/lpush.html">点这里</a>。</p>
 <p>&emsp;&emsp;③CoolPush：这是我无意中发现的一个推送服务，由大佬@xuthus开发，能够实时推送评论相关内容到QQ。</p>
 <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>&emsp;&emsp;①我是采用的hexo+volantis主题，volantis内置了许多第三方评论插件，我启用的是valine。其它主题可能略有不同。</p>
@@ -602,19 +601,54 @@
 <p>&emsp;&emsp;②绑定QQ号，选择机器人并添加机器人为好友；</p>
 <p><img src="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" srcset="data:image/png;base64,666" alt="绑定QQ和选择机器人"></p>
 <p>&emsp;&emsp;③点击上方说明，下拉到“配合valine进行推送”，复制框内代码粘贴到script.ejs底部，将skey替换成你自己的，路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的博客\themes\volantis\layout\_third-party\comments\valine\</span><br></pre></td></tr></table></figure>
-
+<pre><code>你的博客\themes\volantis\layout\_third-party\comments\valine\</code></pre>
 <p>&emsp;&emsp;④需要注意的是，目前（2020.11.30 13:00），大佬提供的js脚本需要稍稍修改，否则会提示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</span><br></pre></td></tr></table></figure>
-
-
+<pre><code>Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</code></pre>
 <del>通过搜索，学习csdn上的一篇文章，发现需要用window.οnlοad=function(){ }将代码包裹。</del>
 
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>&emsp;&emsp;2020.12.17更新：</p>
 <p>&emsp;&emsp;请教了valine群里的大佬，大佬说：“原因就是 Valine 的评论框是动态加载的，你的事件定义的时候 Button 还没有出来呢，所以找不到这个元素，所以需要使用事件委托。”</p>
 <p>&emsp;&emsp;故新版完整代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> pushLink =<span class="string">&quot;https://push.xuthus.cc/send/替换你的key&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> siteName = <span class="string">&quot;W4J1e&#x27;s blog&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> valineButton=<span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vsubmit vbtn&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">var</span> title = siteName + <span class="string">&quot;上又有新评论啦~!\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">send_valine</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//获取元素信息</span></span><br><span class="line">    <span class="keyword">var</span> pagename = <span class="built_in">document</span>.title;</span><br><span class="line">    <span class="keyword">var</span> pageurl = <span class="built_in">document</span>.URL;</span><br><span class="line">    <span class="keyword">var</span> pushtime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">var</span> vnick = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vnick vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">    <span class="keyword">var</span> vmail = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vmail vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">    <span class="keyword">var</span> vlink = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;vlink vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">    <span class="keyword">var</span> veditor = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&quot;veditor vinput&quot;</span>)[<span class="number">0</span>].value;</span><br><span class="line">    content =</span><br><span class="line">      title +</span><br><span class="line">      <span class="string">&quot;昵称：&quot;</span> + vnick +</span><br><span class="line">      <span class="string">&quot;\n邮箱：&quot;</span> + vmail +</span><br><span class="line">      <span class="string">&quot;\n网站地址：&quot;</span> + vlink +</span><br><span class="line">      <span class="string">&quot;\n文章标题：&quot;</span> + pagename +</span><br><span class="line">      <span class="string">&quot;\n评论内容：&quot;</span> + veditor +</span><br><span class="line">      <span class="string">&quot;\n文章链接：&quot;</span> + pageurl +</span><br><span class="line">      <span class="string">&quot;\n评论时间&quot;</span> + pushtime.toLocaleString() + <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">var</span> httpRequest = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//第一步：创建需要的对象</span></span><br><span class="line">    httpRequest.open(<span class="string">&quot;POST&quot;</span>, pushLink, <span class="literal">true</span>); <span class="comment">//第二步：打开连接</span></span><br><span class="line">    httpRequest.setRequestHeader(</span><br><span class="line">      <span class="string">&quot;Content-type&quot;</span>,</span><br><span class="line">      <span class="string">&quot;application/json&quot;</span></span><br><span class="line">    ); <span class="comment">//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）</span></span><br><span class="line">    httpRequest.send(content); <span class="comment">//发送请求 </span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.body.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e.target.className.indexOf(<span class="string">&#x27;vsubmit&#x27;</span>) === -<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  send_valine();</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&lt;script&gt;
+  var pushLink =&quot;https://push.xuthus.cc/send/替换你的key&quot;;
+  var siteName = &quot;W4J1e&#39;s blog&quot;;
+  var valineButton=document.getElementsByClassName(&quot;vsubmit vbtn&quot;)[0];
+  var title = siteName + &quot;上又有新评论啦~!\n&quot;;
 
+  function send_valine() &#123;
+    //获取元素信息
+    var pagename = document.title;
+    var pageurl = document.URL;
+    var pushtime = new Date();
+    var vnick = document.getElementsByClassName(&quot;vnick vinput&quot;)[0].value;
+    var vmail = document.getElementsByClassName(&quot;vmail vinput&quot;)[0].value;
+    var vlink = document.getElementsByClassName(&quot;vlink vinput&quot;)[0].value;
+    var veditor = document.getElementsByClassName(&quot;veditor vinput&quot;)[0].value;
+    content =
+      title +
+      &quot;昵称：&quot; + vnick +
+      &quot;\n邮箱：&quot; + vmail +
+      &quot;\n网站地址：&quot; + vlink +
+      &quot;\n文章标题：&quot; + pagename +
+      &quot;\n评论内容：&quot; + veditor +
+      &quot;\n文章链接：&quot; + pageurl +
+      &quot;\n评论时间&quot; + pushtime.toLocaleString() + &quot;\n&quot;;
+    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+    httpRequest.open(&quot;POST&quot;, pushLink, true); //第二步：打开连接
+    httpRequest.setRequestHeader(
+      &quot;Content-type&quot;,
+      &quot;application/json&quot;
+    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(content); //发送请求 
+  &#125;
+
+  document.body.addEventListener(&#39;click&#39;, function(e) &#123;
+  if(e.target.className.indexOf(&#39;vsubmit&#39;) === -1) &#123;
+    return;
+  &#125;
+  send_valine();
+&#125;)
+&lt;/script&gt;</code></pre>
 <p>⑤hexo clean &amp; hexo d ，enjoy it！</p>
 <p> <img src="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" srcset="data:image/png;base64,666" alt="cpush"></p>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&emsp;&emsp;很多事情其实都需要自己不断去试错，从错误中找到问题的根源，然后解决问题。各个领域的前辈们都开发了许多东西，我们都是站在巨人的肩膀上去造轮子，这是一件很幸福的事。当然这件事也让我有一种想要好好学学javascript的念头，毕竟学无止境嘛。</p>
@@ -1087,7 +1121,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Dec 18 2020 13:55:13 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Fri Dec 18 2020 14:28:16 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2020-12-18 日</div>
           
         </div>
@@ -1317,6 +1351,8 @@ var loadCSS = function( href, before, media, attributes ){
   
   
   
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/highlight.js@10.4.1/styles/a11y-dark.css", window.volantis.loadcss);
   
 </script>
 <!-- required -->
@@ -1598,7 +1634,7 @@ var loadCSS = function( href, before, media, attributes ){
       if (href.length == 0) {
         // 选中文本
         if (window.getSelection().toString()) {
-          if ('' == 'true') {
+          if ('true' == 'true') {
             copyText.style.display = 'block';
             hrText.style.display = 'block';
           }
@@ -1709,6 +1745,61 @@ var loadCSS = function( href, before, media, attributes ){
   
 
 
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
 
 
 
@@ -1900,6 +1991,13 @@ function setSearchService() {
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+  
 
 
 
@@ -2387,8 +2485,14 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 		  Pjax_backstretch()
         
         
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
         
         
+        
+        
+          pjax_initCopyCode();
         
         
           pjax_valine();
