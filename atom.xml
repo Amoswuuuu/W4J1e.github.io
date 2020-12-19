@@ -6,10 +6,35 @@
   <link href="https://w4j1e.xyz/atom.xml" rel="self"/>
   
   <link href="https://w4j1e.xyz/"/>
-  <updated>2020-12-15T12:35:38.743Z</updated>
+  <updated>2020-12-19T10:42:43.223Z</updated>
   <id>https://w4j1e.xyz/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次对海诺官网的渗透</title>
+    <link href="https://w4j1e.xyz/posts/h4ck2hn.html"/>
+    <id>https://w4j1e.xyz/posts/h4ck2hn.html</id>
+    <published>2020-12-19T10:21:16.225Z</published>
+    <updated>2020-12-19T10:42:43.223Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="note quote"><p>这是很久以前（大概2014年）搞的渗透了，放现在也没什么参考意义。此外还有渗透过湖北某县zf的一个站群，跨站、提权、内网欺骗等内容以后看情况发，发出来只是因为想丰富一点内容给搜索引擎，以及纪念一下我大学时候“不务正业”的青春。</p></div><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>&emsp;&emsp;我们学校海诺培训中心，是培训计算机二级的，因为我没有报班所以对海诺其实没有太大的感觉，今天偶然在室友练习册上看到了海诺的网址，于是便萌生了一个渗透检测的想法，我的渗透思路是通过sql注入点入手。</p><h3 id="找注入"><a href="#找注入" class="headerlink" title="找注入"></a>找注入</h3><p>&emsp;&emsp;首先通过谷歌关键字搜索：inurl:hnpx100.com/?id=  就是这个关键字，然后在结果里面对搜索结果页面进行sql注入检测，发现了4个sql注入点。</p><h3 id="猜表段字段"><a href="#猜表段字段" class="headerlink" title="猜表段字段"></a>猜表段字段</h3><p>&emsp;&emsp;然后我对其中一个的表段和字段进行猜解。得到了管理员账户和密码（密码是经过MD5加密的），其中一个是admin管理员，也就是拥有最高权限的管理员，另外一个则是普通管理员。</p><h3 id="找后台"><a href="#找后台" class="headerlink" title="找后台"></a>找后台</h3><p>&emsp;&emsp;好了，现在开始试它的后台地址，管理页面页面如下：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnht.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnht.jpg" srcset="data:image/png;base64,666" alt="后台"></p><p>&emsp;&emsp;输入帐号和密码还有验证码，登陆成功，管理员界面中学生报名信息页面如下（但是貌似很久没更新，数据还是2008年的，点击进去就能看到这些学长学姐的信息和联系方式）：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hndt.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hndt.jpg" srcset="data:image/png;base64,666" alt="数据"></p><h3 id="传asp大马"><a href="#传asp大马" class="headerlink" title="传asp大马"></a>传asp大马</h3><p>&emsp;&emsp;然后修改asp木马的扩展名为jpg，在图片管理里面上传得到路径，如下（在这里我演示上传的图片不是木马，而是普通的小黄人图片）：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnup.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnup.jpg" srcset="data:image/png;base64,666" alt="海诺上传"></p><p>&emsp;&emsp;了解一点渗透知识的朋友都知道后台管理中数据库备份这个功能很方便但是对服务器的威胁也很大，我利用了数据库备份这个功能得到了webshell，在这里就不展示截图了。</p><h3 id="提醒管理员"><a href="#提醒管理员" class="headerlink" title="提醒管理员"></a>提醒管理员</h3><p>&emsp;&emsp;没有修改首页，只是挂了另外一个黑页，提醒一下管理员，并且深夜给老师发了一条提醒短信（笑</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnpg.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnpg.jpg" srcset="data:image/png;base64,666" alt="黑页"><br>&emsp;&emsp;当时的黑页有点fzl，所以马赛克了一些内容，并且以前在全球被黑站点统计提交时都是用的我名字的简称，直到后来才用Wajie，去年才开始用W4J1e。</p>]]></content>
+    
+    
+    <summary type="html">记一次曾经对海诺官网的渗透测试。</summary>
+    
+    
+    
+    <category term="渗透" scheme="https://w4j1e.xyz/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    
+    <category term="sql" scheme="https://w4j1e.xyz/tags/sql/"/>
+    
+    <category term="web渗透" scheme="https://w4j1e.xyz/tags/web%E6%B8%97%E9%80%8F/"/>
+    
+    <category term="webshell" scheme="https://w4j1e.xyz/tags/webshell/"/>
+    
+  </entry>
   
   <entry>
     <title>最新版基于Leancloud推送Valine评论到QQ</title>
@@ -162,7 +187,7 @@
     <link href="https://w4j1e.xyz/posts/cpush.html"/>
     <id>https://w4j1e.xyz/posts/cpush.html</id>
     <published>2020-11-30T05:10:48.459Z</published>
-    <updated>2020-12-17T14:08:06.656Z</updated>
+    <updated>2020-12-19T10:44:00.945Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>&emsp;&emsp;2020.12.17：修改了javascript代码，现在稳得一P。</p><p>&emsp;&emsp;<psw>提示：这个方法也许会遇到别有用心的无聊之人刷爆你的QQ</psw></p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。</p><p>&emsp;&emsp;①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；</p><p>&emsp;&emsp;②Qmsg酱：参考了多个文档多次配置，但是评论测试时，日志显示：</p><pre><code>QQ提醒失败: Request failed with status code 404</code></pre><p>&emsp;&emsp;我认为可能是Qmsg酱<del>推送出了故障</del>，于是弃用。事实上是接口地址改了，最新配置方法：<a href="https://w4j1e.xyz/posts/lpush.html">点这里</a>。</p><p>&emsp;&emsp;③CoolPush：这是我无意中发现的一个推送服务，由大佬@xuthus开发，能够实时推送评论相关内容到QQ。</p><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>&emsp;&emsp;①我是采用的hexo+volantis主题，volantis内置了许多第三方评论插件，我启用的是valine。其它主题可能略有不同。</p><p>&emsp;&emsp;②打开<a href="https://cp.xuthus.cc/">https://cp.xuthus.cc/</a> ，登陆，可以选择github、gitee和OSC登陆；</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" srcset="data:image/png;base64,666" alt="登陆"></p><p>&emsp;&emsp;②绑定QQ号，选择机器人并添加机器人为好友；</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" srcset="data:image/png;base64,666" alt="绑定QQ和选择机器人"></p><p>&emsp;&emsp;③点击上方说明，下拉到“配合valine进行推送”，复制框内代码粘贴到script.ejs底部，将skey替换成你自己的，路径：</p><pre><code>你的博客\themes\volantis\layout\_third-party\comments\valine\</code></pre><p>&emsp;&emsp;④需要注意的是，目前（2020.11.30 13:00），大佬提供的js脚本需要稍稍修改，否则会提示：</p><pre><code>Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</code></pre><del>通过搜索，学习csdn上的一篇文章，发现需要用window.οnlοad=function(){ }将代码包裹。</del><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>&emsp;&emsp;2020.12.17更新：</p><p>&emsp;&emsp;请教了valine群里的大佬，大佬说：“原因就是 Valine 的评论框是动态加载的，你的事件定义的时候 Button 还没有出来呢，所以找不到这个元素，所以需要使用事件委托。”</p><p>&emsp;&emsp;故新版完整代码如下：</p><pre><code class="javascript">&lt;script&gt;  var pushLink =&quot;https://push.xuthus.cc/send/替换你的key&quot;;  var siteName = &quot;W4J1e&#39;s blog&quot;;  var valineButton=document.getElementsByClassName(&quot;vsubmit vbtn&quot;)[0];  var title = siteName + &quot;上又有新评论啦~!\n&quot;;  function send_valine() &#123;    //获取元素信息    var pagename = document.title;    var pageurl = document.URL;    var pushtime = new Date();    var vnick = document.getElementsByClassName(&quot;vnick vinput&quot;)[0].value;    var vmail = document.getElementsByClassName(&quot;vmail vinput&quot;)[0].value;    var vlink = document.getElementsByClassName(&quot;vlink vinput&quot;)[0].value;    var veditor = document.getElementsByClassName(&quot;veditor vinput&quot;)[0].value;    content =      title +      &quot;昵称：&quot; + vnick +      &quot;\n邮箱：&quot; + vmail +      &quot;\n网站地址：&quot; + vlink +      &quot;\n文章标题：&quot; + pagename +      &quot;\n评论内容：&quot; + veditor +      &quot;\n文章链接：&quot; + pageurl +      &quot;\n评论时间&quot; + pushtime.toLocaleString() + &quot;\n&quot;;    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象    httpRequest.open(&quot;POST&quot;, pushLink, true); //第二步：打开连接    httpRequest.setRequestHeader(      &quot;Content-type&quot;,      &quot;application/json&quot;    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）    httpRequest.send(content); //发送请求   &#125;  document.body.addEventListener(&#39;click&#39;, function(e) &#123;  if(e.target.className.indexOf(&#39;vsubmit&#39;) === -1) &#123;    return;  &#125;  send_valine();&#125;)&lt;/script&gt;</code></pre><p>⑤hexo clean &amp; hexo d ，enjoy it！</p><p> <img src="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" srcset="data:image/png;base64,666" alt="cpush"></p><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&emsp;&emsp;很多事情其实都需要自己不断去试错，从错误中找到问题的根源，然后解决问题。各个领域的前辈们都开发了许多东西，我们都是站在巨人的肩膀上去造轮子，这是一件很幸福的事。当然这件事也让我有一种想要好好学学javascript的念头，毕竟学无止境嘛。</p><p>&emsp;&emsp;2020.11.30   By W4J1e</p>]]></content>
     

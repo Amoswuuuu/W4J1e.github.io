@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>记一次对海诺官网的渗透</title>
+      <link href="posts/h4ck2hn.html"/>
+      <url>posts/h4ck2hn.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="note quote"><p>这是很久以前（大概2014年）搞的渗透了，放现在也没什么参考意义。此外还有渗透过湖北某县zf的一个站群，跨站、提权、内网欺骗等内容以后看情况发，发出来只是因为想丰富一点内容给搜索引擎，以及纪念一下我大学时候“不务正业”的青春。</p></div><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>&emsp;&emsp;我们学校海诺培训中心，是培训计算机二级的，因为我没有报班所以对海诺其实没有太大的感觉，今天偶然在室友练习册上看到了海诺的网址，于是便萌生了一个渗透检测的想法，我的渗透思路是通过sql注入点入手。</p><h3 id="找注入"><a href="#找注入" class="headerlink" title="找注入"></a>找注入</h3><p>&emsp;&emsp;首先通过谷歌关键字搜索：inurl:hnpx100.com/?id=  就是这个关键字，然后在结果里面对搜索结果页面进行sql注入检测，发现了4个sql注入点。</p><h3 id="猜表段字段"><a href="#猜表段字段" class="headerlink" title="猜表段字段"></a>猜表段字段</h3><p>&emsp;&emsp;然后我对其中一个的表段和字段进行猜解。得到了管理员账户和密码（密码是经过MD5加密的），其中一个是admin管理员，也就是拥有最高权限的管理员，另外一个则是普通管理员。</p><h3 id="找后台"><a href="#找后台" class="headerlink" title="找后台"></a>找后台</h3><p>&emsp;&emsp;好了，现在开始试它的后台地址，管理页面页面如下：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnht.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnht.jpg" srcset="data:image/png;base64,666" alt="后台"></p><p>&emsp;&emsp;输入帐号和密码还有验证码，登陆成功，管理员界面中学生报名信息页面如下（但是貌似很久没更新，数据还是2008年的，点击进去就能看到这些学长学姐的信息和联系方式）：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hndt.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hndt.jpg" srcset="data:image/png;base64,666" alt="数据"></p><h3 id="传asp大马"><a href="#传asp大马" class="headerlink" title="传asp大马"></a>传asp大马</h3><p>&emsp;&emsp;然后修改asp木马的扩展名为jpg，在图片管理里面上传得到路径，如下（在这里我演示上传的图片不是木马，而是普通的小黄人图片）：</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnup.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnup.jpg" srcset="data:image/png;base64,666" alt="海诺上传"></p><p>&emsp;&emsp;了解一点渗透知识的朋友都知道后台管理中数据库备份这个功能很方便但是对服务器的威胁也很大，我利用了数据库备份这个功能得到了webshell，在这里就不展示截图了。</p><h3 id="提醒管理员"><a href="#提醒管理员" class="headerlink" title="提醒管理员"></a>提醒管理员</h3><p>&emsp;&emsp;没有修改首页，只是挂了另外一个黑页，提醒一下管理员，并且深夜给老师发了一条提醒短信（笑</p><p><img src="https://gitee.com/W4j1e/pic/raw/master/img/hnpg.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/hnpg.jpg" srcset="data:image/png;base64,666" alt="黑页"><br>&emsp;&emsp;当时的黑页有点fzl，所以马赛克了一些内容，并且以前在全球被黑站点统计提交时都是用的我名字的简称，直到后来才用Wajie，去年才开始用W4J1e。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql </tag>
+            
+            <tag> web渗透 </tag>
+            
+            <tag> webshell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>最新版基于Leancloud推送Valine评论到QQ</title>
       <link href="posts/lpush.html"/>
       <url>posts/lpush.html</url>
