@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/lpush.html</loc>
+        <lastmod>2020-12-20T10:56:06.538Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/weather.html</loc>
         <lastmod>2020-12-20T06:27:53.829Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,14 +59,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/ershiliu.html</loc>
         <lastmod>2020-12-18T05:39:38.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/lpush.html</loc>
-        <lastmod>2020-12-15T12:35:38.743Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

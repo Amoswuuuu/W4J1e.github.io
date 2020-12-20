@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://W4j1e.xyz/posts/lpush.html</loc>
+    <lastmod>2020-12-20</lastmod>
+  </url>
+  <url>
     <loc>https://W4j1e.xyz/posts/weather.html</loc>
     <lastmod>2020-12-20</lastmod>
   </url>
@@ -23,10 +27,6 @@
   <url>
     <loc>https://W4j1e.xyz/posts/ershiliu.html</loc>
     <lastmod>2020-12-18</lastmod>
-  </url>
-  <url>
-    <loc>https://W4j1e.xyz/posts/lpush.html</loc>
-    <lastmod>2020-12-15</lastmod>
   </url>
   <url>
     <loc>https://W4j1e.xyz/posts/lizhi.html</loc>
