@@ -1668,7 +1668,7 @@
         }
           , j = ""
           , T = {
-            cdn: "https://gravatar.loli.net/avatar/",
+            cdn: "https://sdn.geekzu.org/avatar/",
             ds: ["mp", "identicon", "monsterid", "wavatar", "robohash", "retro", ""],
             params: "",
             hide: !1
