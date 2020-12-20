@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/weather.html</loc>
+        <lastmod>2020-12-20T04:58:31.608Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://W4j1e.xyz/posts/34223.html</loc>
+        <lastmod>2020-12-20T04:01:47.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/h4ck2hn.html</loc>
         <lastmod>2020-12-19T10:51:16.179Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -27,14 +43,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/needpass.html</loc>
         <lastmod>2020-12-18T14:32:20.520Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/34223.html</loc>
-        <lastmod>2020-12-18T13:34:20.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
