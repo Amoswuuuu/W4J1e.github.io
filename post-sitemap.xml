@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/alvshi.html</loc>
+        <lastmod>2020-12-21T14:54:06.720Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://W4j1e.xyz/posts/24h2.html</loc>
+        <lastmod>2020-12-21T14:53:23.370Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/lpush.html</loc>
         <lastmod>2020-12-20T10:56:06.538Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -99,14 +115,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/30605.html</loc>
         <lastmod>2020-12-13T08:38:01.235Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/24h2.html</loc>
-        <lastmod>2020-12-13T08:37:10.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

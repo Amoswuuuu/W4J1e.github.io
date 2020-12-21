@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>通过CoolPush实时推送hexo评论 - W4J1e&#39;s blog</title>
+  <title>迎着落日而歌 - W4J1e&#39;s blog</title>
   
-    <meta name="keywords" content="valine,hexo,volantis,javascript,Coolpush">
+    <meta name="keywords" content="小说,虚构,创作">
   
 
   
-    <meta name="description" content="利用javascript实现实时评论推送hexo评论到QQ">
+    <meta name="description" content="梦醒时已是黎明，你伴着朝霞翩翩起舞，鲜活地生长在我的目光中，缓缓。你是跳动的火焰，你是黑暗中晕开的光明。">
   
 
   <!-- feed -->
@@ -577,7 +577,7 @@
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://gitee.com/W4j1e/pic/raw/master/img/js.jpg'/>
+        <img class='headimg' src='https://gitee.com/W4j1e/pic/raw/master/img/lr.jpg'/>
       </a>
     </div>
   
@@ -586,7 +586,7 @@
     
     
       <h1 class="title">
-        通过CoolPush实时推送hexo评论
+        迎着落日而歌
       </h1>
       <div class='new-meta-box'>
         
@@ -606,7 +606,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/hexo/">hexo</a>
+      <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a>
     </a>
   </div>
 
@@ -617,7 +617,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 30, 2020</p>
+    <p>发布于：Dec 21, 2020</p>
   </a>
 </div>
 
@@ -628,7 +628,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="通过CoolPush实时推送hexo评论" data-path="/posts/cpush.html">
+      <div id="lc-pv" data-title="迎着落日而歌" data-path="/posts/alvshi.html">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -644,13 +644,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>834 words</p>
+      <p>1,305 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
+      <p>4 min</p>
     </a>
   </div>
 
@@ -663,72 +663,44 @@
 
 
   
-  <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>&emsp;&emsp;2020.12.17：修改了javascript代码，现在稳得一P。</p>
-<p>&emsp;&emsp;<psw>提示：这个方法也许会遇到别有用心的无聊之人刷爆你的QQ</psw></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;&emsp;在博客创建以来，我一直在探索hexo的各种新功能。启用了Valine评论插件以来，多次尝试实时推送评论的方案。</p>
-<p>&emsp;&emsp;①Server酱：借助leancloud配置变量，成功推送评论到微信，但是卡片不会显示详情，需要多点击一次，觉得不方便，故弃用；</p>
-<p>&emsp;&emsp;②Qmsg酱：参考了多个文档多次配置，但是评论测试时，日志显示：</p>
-<pre><code>QQ提醒失败: Request failed with status code 404</code></pre>
-<p>&emsp;&emsp;我认为可能是Qmsg酱<del>推送出了故障</del>，于是弃用。事实上是接口地址改了，最新配置方法：<a href="https://w4j1e.xyz/posts/lpush.html">点这里</a>。</p>
-<p>&emsp;&emsp;③CoolPush：这是我无意中发现的一个推送服务，由大佬@xuthus开发，能够实时推送评论相关内容到QQ。</p>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>&emsp;&emsp;①我是采用的hexo+volantis主题，volantis内置了许多第三方评论插件，我启用的是valine。其它主题可能略有不同。</p>
-<p>&emsp;&emsp;②打开<a href="https://cp.xuthus.cc/">https://cp.xuthus.cc/</a> ，登陆，可以选择github、gitee和OSC登陆；</p>
-<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/dl.jpg" srcset="data:image/png;base64,666" alt="登陆"></p>
-<p>&emsp;&emsp;②绑定QQ号，选择机器人并添加机器人为好友；</p>
-<p><img src="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/skey.jpg" srcset="data:image/png;base64,666" alt="绑定QQ和选择机器人"></p>
-<p>&emsp;&emsp;③点击上方说明，下拉到“配合valine进行推送”，复制框内代码粘贴到script.ejs底部，将skey替换成你自己的，路径：</p>
-<pre><code>你的博客\themes\volantis\layout\_third-party\comments\valine\</code></pre>
-<p>&emsp;&emsp;④需要注意的是，目前（2020.11.30 13:00），大佬提供的js脚本需要稍稍修改，否则会提示：</p>
-<pre><code>Uncaught TypeError: Cannot set property &#39;onclick&#39; of undefined</code></pre>
-<del>通过搜索，学习csdn上的一篇文章，发现需要用window.οnlοad=function(){ }将代码包裹。</del>
+  <p>&emsp;&emsp;他那天是蹦蹦跳跳着来找我的。见到我，他依旧挂着迷人的微笑，对我亲切地叫了一声“姐姐”。</p>
+<p>&emsp;&emsp;他比我小五岁，我在上大学，而他在上初中。他应该是很崇拜我，从小便是如此。和邻居家的小伙伴吹牛的时候总是以为他的姐姐无所不能。我笑着拍了一下他的头，假装嗔怪地说：“你呀！能不能成熟一点，都上初中了！”他却只是嘿嘿一笑：“阿绿，你会一直保护我，所以我可以不用长大对不对？“</p>
+<p>&emsp;&emsp;我揉了揉他的头发，他轻轻拍掉我的手然后扭着我去吃冰淇淋。</p>
+<p>&emsp;&emsp;他一定是上天给我们一家人的宝藏吧，虽然爸妈与他相处不过几年，这十多年来一直都是我在照顾他。他小学的时候参加了学校的足球队，我省吃俭用给他买了一个新的足球那天他高兴地跳起来搂着我的脖子，看到他满足的时候我总是很快乐。</p>
+<p>&emsp;&emsp;坐在公园的长椅上，他撕开冰淇淋的包装，望着手上粉色的草莓冰淇淋，突然转过头来一脸轻松地问我：“绿子，听说——你在夜店做兼职？”我有点失措，一时间竟不知道怎样回答他。看着他的眼神渐渐黯淡下来，明亮的眼眸里最后一丝跳动的火焰也渐渐熄灭，那是我见过的，他最严肃的一次。</p>
+<p>&emsp;&emsp;可能，也是他对我最失望的一次。在十多年前爸妈悄悄离开家的那个清晨，他脸上挂着眼泪和鼻涕跑过来找我，瞳孔里满是不安。我抱着他轻轻抚摸他的头发，向他保证我会一直陪着他长大。所以后来很多次和邻居小孩发生争执的时候他都会把我搬出来，他知道我可以帮他摆平一切。可是我从来不敢在他面前哭，也不敢在别人面前示弱，无论别人说得有多么难听，我都会若无其事地拉着他的小手回家，把自己关在房间里偷偷抹眼泪。</p>
+<p>&emsp;&emsp;那个时候我没有朋友，也没有小孩愿意和他玩。他经常在学校里踢球踢到天黑才回家，而我就在厨房里煮好小米粥，斜靠在窗前等他回来。有时候望着渐渐消逝的夕阳我会忍不住轻声唱歌，就像在他小时候哄他睡觉一样，不需要去考虑这么做的意义，他就是全部生活的意义。</p>
+<p>&emsp;&emsp;而他喜欢下雨天，常常在夏日暴雨来临的时候脱掉衣服去雨中玩耍，无论在做什么他都会大喊一句“下雨了我要去看雨了姐姐”。在他躺在小床上喝生姜水的时候我问过他为什么那么喜欢下雨天。他说：“人类太肮脏了。”</p>
+<p>&emsp;&emsp;他的眼睛里大概是揉不得沙子。</p>
+<p>&emsp;&emsp;“为什么要去那种地方呢？虽然你只是做着端茶递水的工作，可是为什么不能是别的地方？”</p>
+<p>&emsp;&emsp;“为什么？”我也不知道为什么，因为我从未设想过他会问出这个问题。他心目中无所不能的大英雄，其实也只是一个在客人面前陪笑的软蛋罢了。为什么会一直呆在那，非要有一个原因的话，只是因为那里的小费更高，这十几年来除了靠远房亲戚微弱的接济之外，我不得不去做不同的兼职来维持这个只有我们两个人的小家。</p>
+<p>&emsp;&emsp;“你不知道班里的人怎样中伤我……”他说了一半就没再说了。</p>
+<p>&emsp;&emsp;“委屈你了。”我第一次面无表情地回他的话。</p>
+<p>&emsp;&emsp;那便是我们最后一次相见。因为第二天绿子被夜场里的醉汉失手打死，他们直接处理掉了尸体，而我作为他的弟弟，却什么也做不了。只能不断地站在她的角度来回忆我们最后一次的对话，我尝试着去理解她，去感受她的痛苦，去包容她，我忘不了在我追问她时她的眼神，明亮的眸子里最后一束光也熄灭了。</p>
+<p>&emsp;&emsp;那天分别的时候他塞给我一本杂志，里面有一页被小心地折了起来，我翻开看，是绿子写的诗：</p>
+<br/>
 
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>&emsp;&emsp;2020.12.17更新：</p>
-<p>&emsp;&emsp;请教了valine群里的大佬，大佬说：“原因就是 Valine 的评论框是动态加载的，你的事件定义的时候 Button 还没有出来呢，所以找不到这个元素，所以需要使用事件委托。”</p>
-<p>&emsp;&emsp;故新版完整代码如下：</p>
-<pre><code class="javascript">&lt;script&gt;
-  var pushLink =&quot;https://push.xuthus.cc/send/替换你的key&quot;;
-  var siteName = &quot;W4J1e&#39;s blog&quot;;
-  var valineButton=document.getElementsByClassName(&quot;vsubmit vbtn&quot;)[0];
-  var title = siteName + &quot;上又有新评论啦~!\n&quot;;
+<p>&emsp;&emsp;沉睡在黑夜里，</p>
+<p>&emsp;&emsp;你是一束黯然盛放的花朵，</p>
+<p>&emsp;&emsp;应和着我的歌声，轻轻</p>
+<p>&emsp;&emsp;歌声与梦都是你飞驰的年少。</p>
+ <br/>
 
-  function send_valine() &#123;
-    //获取元素信息
-    var pagename = document.title;
-    var pageurl = document.URL;
-    var pushtime = new Date();
-    var vnick = document.getElementsByClassName(&quot;vnick vinput&quot;)[0].value;
-    var vmail = document.getElementsByClassName(&quot;vmail vinput&quot;)[0].value;
-    var vlink = document.getElementsByClassName(&quot;vlink vinput&quot;)[0].value;
-    var veditor = document.getElementsByClassName(&quot;veditor vinput&quot;)[0].value;
-    content =
-      title +
-      &quot;昵称：&quot; + vnick +
-      &quot;\n邮箱：&quot; + vmail +
-      &quot;\n网站地址：&quot; + vlink +
-      &quot;\n文章标题：&quot; + pagename +
-      &quot;\n评论内容：&quot; + veditor +
-      &quot;\n文章链接：&quot; + pageurl +
-      &quot;\n评论时间&quot; + pushtime.toLocaleString() + &quot;\n&quot;;
-    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
-    httpRequest.open(&quot;POST&quot;, pushLink, true); //第二步：打开连接
-    httpRequest.setRequestHeader(
-      &quot;Content-type&quot;,
-      &quot;application/json&quot;
-    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
-    httpRequest.send(content); //发送请求 
-  &#125;
+<p>&emsp;&emsp;睡梦中独自梦呓，</p>
+<p>&emsp;&emsp;把它们藏在你的诗里，</p>
+<p>&emsp;&emsp;像是午后慵懒的清风，淡淡</p>
+<p>&emsp;&emsp;吹来二月和煦的暖阳和记忆。</p>
+ <br/>
 
-  document.body.addEventListener(&#39;click&#39;, function(e) &#123;
-  if(e.target.className.indexOf(&#39;vsubmit&#39;) === -1) &#123;
-    return;
-  &#125;
-  send_valine();
-&#125;)
-&lt;/script&gt;</code></pre>
-<p>⑤hexo clean &amp; hexo d ，enjoy it！</p>
-<p> <img src="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" class="lazyload" data-srcset="https://gitee.com/W4j1e/pic/raw/master/img/cpush.jpg" srcset="data:image/png;base64,666" alt="cpush"></p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&emsp;&emsp;很多事情其实都需要自己不断去试错，从错误中找到问题的根源，然后解决问题。各个领域的前辈们都开发了许多东西，我们都是站在巨人的肩膀上去造轮子，这是一件很幸福的事。当然这件事也让我有一种想要好好学学javascript的念头，毕竟学无止境嘛。</p>
-<p>&emsp;&emsp;2020.11.30   By W4J1e</p>
+<p>&emsp;&emsp;梦醒时已是黎明，</p>
+<p>&emsp;&emsp;你伴着朝霞翩翩起舞，</p>
+<p>&emsp;&emsp;鲜活地生长在我的目光中，缓缓</p>
+<p>&emsp;&emsp;你是跳动的火焰，</p>
+<p>&emsp;&emsp;你是黑暗中晕开的光明。</p>
+<br/>
+
+
+<p>&emsp;&emsp;“我从来不觉得我心理有任何疾病，以上就是我要说的了，邹医生。”</p>
 
   
   
@@ -746,7 +718,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://w4j1e.xyz/posts/cpush.html>https://w4j1e.xyz/posts/cpush.html</a></p>
+                <p>本文永久链接是：<a href=https://w4j1e.xyz/posts/alvshi.html>https://w4j1e.xyz/posts/alvshi.html</a></p>
               
             
           </blockquote>
@@ -763,10 +735,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T18:44:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T22:54:06+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 19, 2020</p>
+    <p>更新于：Dec 21, 2020</p>
   </a>
 </div>
 
@@ -775,7 +747,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/valine/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>valine</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/volantis/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>volantis</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Coolpush/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Coolpush</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B0%8F%E8%AF%B4/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>小说</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%99%9A%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>虚构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%88%9B%E4%BD%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>创作</p></a></div>
 
 
         
@@ -788,7 +760,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/cpush.html&title=通过CoolPush实时推送hexo评论 - W4J1e's blog&summary=利用javascript实现实时评论推送hexo评论到QQ"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/alvshi.html&title=迎着落日而歌 - W4J1e's blog&summary=梦醒时已是黎明，你伴着朝霞翩翩起舞，鲜活地生长在我的目光中，缓缓。你是跳动的火焰，你是黑暗中晕开的光明。"
           
           >
           
@@ -800,7 +772,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/cpush.html&title=通过CoolPush实时推送hexo评论 - W4J1e's blog&summary=利用javascript实现实时评论推送hexo评论到QQ"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/alvshi.html&title=迎着落日而歌 - W4J1e's blog&summary=梦醒时已是黎明，你伴着朝霞翩翩起舞，鲜活地生长在我的目光中，缓缓。你是跳动的火焰，你是黑暗中晕开的光明。"
           
           >
           
@@ -812,7 +784,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/cpush.html&title=通过CoolPush实时推送hexo评论 - W4J1e's blog&summary=利用javascript实现实时评论推送hexo评论到QQ"
+          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/alvshi.html&title=迎着落日而歌 - W4J1e's blog&summary=梦醒时已是黎明，你伴着朝霞翩翩起舞，鲜活地生长在我的目光中，缓缓。你是跳动的火焰，你是黑暗中晕开的光明。"
           
           >
           
@@ -826,7 +798,7 @@
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACT0lEQVR42u3aQZLjMAgFUN//0j37meoyH+TUBD/tkrIsPbIhwPXz0nWBg4ODg4Mvgl/N9ff+fw745fm7c28vPr0vODg4ODj4Qng5Abh5/i5A1e+75989Dw4ODg4OvhmeJizd/dPEqH1fcHBwcHBw8CtNXFLQ6UCDg4ODg4OD5xdPGwjV94CDg4ODg4MfKNAXCwvpe9IE6OOdFHBwcHBw8P8IfmrA71Ofjw34gYODg4ODfzH8qZUOBnQH/uJ7gYODg4ODL4Knf/SrDYFuoaHbWCgnQODg4ODg4IvgXWD1AmmjoRvA8n5wcHBwcPDF8GkB4alEJ20wxAkMODg4ODj4F8KnBfzuAEEK6SZStw0FcHBwcHDwBfBTicy0AVANbPrDgIODg4ODb4ZPCwNP7UsHF8oNBXBwcHBw8AXwU4WGaWFhek6cwICDg4ODgy+Adw+YNiC67xnvBwcHBwcHfwE8LSykiUw3sON7gIODg4ODL4JXN0wTi1MFibRRAQ4ODg4OvhmeDtA9lYhUA5feGxwcHBwcfDN8uqaN/FOguKEADg4ODg6+AJ7+4X864akGNk2AwMHBwcHBN8KfSmBOBSR9z+37wMHBwcHBF8Gv5prunzYS0sCAg4ODg4NvhqcJS9oYaF80fB4cHBwcHPzN8G6hftqgmDYSyoEHBwcHBwcHHw/kVxsQ3QLIxxIYcHBwcHDwL4ZXE4dTgeieAw4ODg4O/gb4Uw2FaYCmA4Xg4ODg4OCb4dPC/anG//RzPBgADg4ODg7+xfC3LXBwcHBw8AXrD36DQv0sEexbAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAD4CAAAAADkunTXAAACSElEQVR42u3cSXLCQAwFUN//0skBKMqaTIH69Y540tPqoza5/g5dFzg4ODg4+CL4VVzvrn950M3fs8fb9YKDg4ODgy+EhwPAm0KmwNXnha8HBwcHBwdfDI8GlmyBd/etPj99Pjg4ODg4OHj4+mzQ6D4PHBwcHBwcfC7AdBvRfQ44ODg4OPhJ8G5BU4OEbOM/vpMCDg4ODg7+RfDuC36f/jz2gh84ODg4OPgPw7trKtBEz2/XCw4ODg4Ovgge3diPFnQ9tLobDeDg4ODg4Bvh1Y387qD/qUFDeEMBHBwcHBx8Abw7SKgGnLugER143NURHkSAg4ODg4P/MHx6AJAtKBtoygEJHBwcHBx8MTwaDLKBojqQyH6+dYCDg4ODgy+ER18MmIZl79sdiICDg4ODg2+CZwNL94WAahCpblCAg4ODg4Nvhne/4FePV4HdAQg4ODg4OPgJ8OqAIDuoeCyogIODg4ODHwCfBkULqQKrjQAHBwcHB98Inyogu9FQHUBUGwoODg4ODr4Rnh3ITx2vNqJdNzg4ODg4+EJ4+It8cABQHRxkz4vWDQ4ODg4OvhleXd1B/1RQCjcSHBwcHBx8EbwbELLBI9vQbGNvNyjAwcHBwcEXwruB5akXBLMBBhwcHBwc/GT41OAgXVCyEdlABQ4ODg4ODl7/h+7V87ONuQ1c4ODg4ODg4O0fymUblG0sODg4ODj4ifBukJgOJNkBxMd2UsDBwcHBwb8IPvWCX7XQ6P2qwQUcHBwcHHwj/LQFDg4ODg6+YP0DLhBCDAs2NdgAAAAASUVORK5CYII=">
           </div>
         </div>
       
@@ -850,18 +822,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/posts/30606.html'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Sunny Days</p>
-          <p class='content'>年轻的时候觉得说出“孤独”是一件很可耻的事，就像是身边的人明明看到你很快乐你自己却觉得孤独一样，没有人会相信。
-  而现在，我快24了，仍然不知道应该怎样来合理地描述自己的生活，也不知道该怎样来...</p>
-        </a>
       
-      
-        <a class='next' href='/posts/30605.html'>
-          <p class='title'>1997<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>再次来到杰的酒吧是八月上旬，燥热的天气始终无法让人心安。
-我推开门，一股混杂着各种气味的空气迎面扑来。杰正在给一位客人调酒，看到我的那一瞬间他有些惊喜，随即点头示意我坐下来。
-“什么时候回来的？...</p>
+        <a class='next' href='/posts/weather.html'>
+          <p class='title'>给你的博客添加一个天气<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言记得起初使用hexo的时候看到过某位用volanits主题的大佬在Navbar添加了一个天气插件，如今想要折腾但是想不起来是哪位大佬了，于是自己摸索了许久，就添加了如你现在所见的天气插件（事...</p>
         </a>
       
     </div>
@@ -889,29 +853,6 @@
 </div>
 <aside class='l_side'>
   
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow blur desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-text">操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-text">更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
-    </div>
-  </section>
-
-
-  
-
   
     
     
@@ -1202,7 +1143,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 21 2020 22:55:43 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Mon Dec 21 2020 22:55:42 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2020-12-21 日</div>
           
         </div>
@@ -1277,7 +1218,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="通过CoolPush实时推送hexo评论";
+  pdata.postTitle="迎着落日而歌";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
