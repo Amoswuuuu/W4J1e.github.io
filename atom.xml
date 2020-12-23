@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>W4J1e&#39;s blog</title>
   
-  <subtitle>W4J1e的博客</subtitle>
+  
   <link href="https://w4j1e.xyz/atom.xml" rel="self"/>
   
   <link href="https://w4j1e.xyz/"/>
@@ -189,7 +189,7 @@
     <link href="https://w4j1e.xyz/posts/lizhi.html"/>
     <id>https://w4j1e.xyz/posts/lizhi.html</id>
     <published>2020-12-06T08:11:11.518Z</published>
-    <updated>2020-12-13T08:42:01.134Z</updated>
+    <updated>2020-12-23T04:29:17.831Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>分享一首音樂。<!-- more --></p><p>這應該是南京李先生最受人喜歡的歌曲之一。從第一次發佈以來有許多許多的版本，每次的演唱會似乎都會唱，這只是其中一個版本。</p><p>自從他因爲“<psw>行爲不端</psw>”被封殺以來，很難直接聽到他的音樂了，但是還好總有人會記得。</p><p>Via 南京李志 2014/15 i/o 跨年演唱會</p><iframe class="video" src="https://cdn.jsdelivr.net/gh/W4J1e/blog/v/zgsjhhm.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
     

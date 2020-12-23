@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/lizhi.html</loc>
+        <lastmod>2020-12-23T04:29:17.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/alvshi.html</loc>
         <lastmod>2020-12-21T14:54:06.720Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -75,14 +83,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/ershiliu.html</loc>
         <lastmod>2020-12-18T05:39:38.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/lizhi.html</loc>
-        <lastmod>2020-12-13T08:42:01.134Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
