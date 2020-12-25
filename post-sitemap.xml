@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/34223.html</loc>
+        <lastmod>2020-12-24T11:50:12.871Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/20180922.html</loc>
         <lastmod>2020-12-24T11:45:58.351Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,14 +59,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/weather.html</loc>
         <lastmod>2020-12-20T06:27:53.829Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/34223.html</loc>
-        <lastmod>2020-12-20T04:01:47.332Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
