@@ -1,3 +1,0 @@
-User-agent: *
-Allow:  /sitemap.xml
-Allow: /baidusitemap.xml
