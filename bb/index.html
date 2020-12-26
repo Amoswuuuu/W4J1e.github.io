@@ -1105,7 +1105,9 @@
   <article class="post white-box reveal blur" id="comments">
     <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <div id="waline" style="max-width: 800px;margin: 0 auto;"></div>
+    <div id="waline">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
   </article>
 
 
@@ -1819,28 +1821,53 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
-  <!doctype html>
-<html>
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Webpack App</title>
-</head>
-<body>
-<span id="/" class="leancloud_visitors">
-<em class="post-meta-item-text">阅读量 </em><i class="leancloud-visitors-count"></i></span>
-<div id="waline" style="max-width: 800px;margin: 0 auto;"></div>
+  
+
 <script src="https://unpkg.com/@waline/client/dist/Waline.min.js"></script>
-         <script>
-		 new Waline({
-              el: '#waline',
-              path: '/',
-              visitor: true,
-              serverURL: 'https://waline-nu.vercel.app/'
-            });
-	     </script>
-</body>
-</html>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail,'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  function pjax_waline() {
+    if(!document.querySelectorAll("#waline")[0])return;
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    new Waline({
+      el: '#waline',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      serverURL: 'https://waline-nu.vercel.app',
+      uploadImage: function(file) {
+      const formData = new FormData();
+      formData.append('image', file);
+      return fetch('https://7bu.top/api/upload', {
+        method: 'POST',
+        body: formData
+      }).then(resp => resp.json()).then(resp => resp.data.url);
+    },
+      requiredFields: requiredFields,
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-CN'
+  
+    });
+  }
+  $(function () {
+    pjax_waline();
+  });
+</script>
 
 
 
@@ -2395,6 +2422,9 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         
         
         
+        
+          pjax_waline();
+        		
       } catch (e) {
         console.log(e);
       }
