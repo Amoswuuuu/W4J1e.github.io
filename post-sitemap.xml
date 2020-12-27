@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/20180922.html</loc>
+        <lastmod>2020-12-27T06:27:57.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/waline.html</loc>
-        <lastmod>2020-12-26T16:53:27.379Z</lastmod>
+        <lastmod>2020-12-27T06:23:44.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -115,14 +123,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/h4ck2hn.html</loc>
         <lastmod>2020-12-26T07:44:53.844Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/20180922.html</loc>
-        <lastmod>2020-12-26T07:44:46.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
