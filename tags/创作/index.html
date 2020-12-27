@@ -364,10 +364,22 @@
 				</ul>
 			</div>
 			
-			<div id="weather"></div>
-			<script src="https://cdn.jsdelivr.net/gh/w4j1e/blog@master/js/tqa.js"></script>
-
-
+		   <div id="tp-weather-widget"></div>
+           <script>
+           (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+           window.SeniverseWeatherWidget('show', {
+           flavor: "slim",
+           location: "WX4FBXXFKE4F",
+           geolocation: true,
+           language: "auto",
+           unit: "c",
+           theme: "auto",
+           token: "6d40a309-89a2-4342-b5a6-18b6b8be692f",
+           hover: "enabled",
+           container: "tp-weather-widget"
+           })
+          </script>
+			
              <div class="m_search">
              <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
@@ -1285,7 +1297,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Dec 27 2020 15:23:55 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sun Dec 27 2020 16:19:57 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-27 日</div>
           
         </div>
