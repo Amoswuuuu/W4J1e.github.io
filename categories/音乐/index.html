@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow floatable show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -856,7 +856,7 @@
     
     
 
-<section class="widget blogger shadow blur desktop mobile">
+<section class="widget blogger shadow floatable desktop mobile">
   <div class='content'>
     
       
@@ -927,11 +927,11 @@
     
     
 
-<section class="widget text shadow blur desktop">
+<section class="widget text shadow floatable desktop">
   
   <header>
     
-      <a href='./posts/34223.html'><i class="fas fa-upload fa-fw" aria-hidden="true"></i><span class='name'>更新提要</span></a>
+      <a href='/posts/34223.html'><i class="fas fa-upload fa-fw" aria-hidden="true"></i><span class='name'>更新提要</span></a>
     
   </header>
 
@@ -965,7 +965,7 @@
     
     
 
-<section class="widget grid shadow blur desktop">
+<section class="widget grid shadow floatable desktop">
   
   <header>
     
@@ -1048,7 +1048,7 @@
     
   
 
-  <section class="widget category shadow blur desktop">
+  <section class="widget category shadow floatable desktop">
     
   <header>
     
@@ -1097,7 +1097,7 @@
     
   
 
-  <section class="widget tagcloud shadow blur desktop mobile">
+  <section class="widget tagcloud shadow floatable desktop mobile">
     
   <header>
     
@@ -1118,7 +1118,7 @@
     
     
 
-<section class="widget shadow blur desktop mobile">
+<section class="widget shadow floatable desktop mobile">
   
   <header>
     
@@ -1138,7 +1138,7 @@
 
       
         <div class="webinfo-item">
-          <div>已运行时间：</div>
+          <div>悄悄苟活：</div>
           <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
         </div>
         <script>
@@ -1153,14 +1153,14 @@
 
       
         <div class="webinfo-item">
-          <div>本站总字数：</div>
+          <div>共有字数：</div>
           <div>17.3k 字</div>
         </div>
       
 
       
         <div class="webinfo-item">
-          <div>本站访客数：</div>
+          <div>总访客数：</div>
           
           <div><span id="lc-uv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
           
@@ -1169,7 +1169,7 @@
 
       
         <div class="webinfo-item">
-          <div>本站总访问量：</div>
+          <div>总访问量：</div>
           
           <div><span id="lc-sv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
           
@@ -1178,9 +1178,9 @@
 
       
         <div class="webinfo-item">
-          <div>最后活动时间：</div>
+          <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Sun Dec 27 2020 20:39:22 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sun Dec 27 2020 22:19:29 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-27 日</div>
           
         </div>
@@ -1246,7 +1246,7 @@
     
     
 
-<section class="widget qrcode shadow blur desktop">
+<section class="widget qrcode shadow floatable desktop">
   
   <header>
     
@@ -2533,7 +2533,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["./bb/"];
+        var banUrl = ["/bb/"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
