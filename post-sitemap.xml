@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://W4j1e.xyz/posts/waline.html</loc>
+        <lastmod>2020-12-27T08:53:51.355Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://W4j1e.xyz/posts/34223.html</loc>
         <lastmod>2020-12-27T07:22:50.837Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,14 +27,6 @@
     <url>
         <loc>https://W4j1e.xyz/posts/20180922.html</loc>
         <lastmod>2020-12-27T06:27:57.091Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://W4j1e.xyz/posts/waline.html</loc>
-        <lastmod>2020-12-27T06:23:44.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
