@@ -6920,7 +6920,7 @@ for (var i = 0; i < firstpages.length; i++) {
 
 </script>
 
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/TianZonglin/tuchuang/file/valine.js'></script>
+<script type='text/javascript' src='https://unpkg.com/@waline/client/dist/Waline.min.js'></script>
 <script> 
     var GUEST_INFO = ['nick','mail','link'];
     var guest_info = "nick,mail,link".split(',').filter(function(item){
@@ -6928,9 +6928,9 @@ for (var i = 0; i < firstpages.length; i++) {
     });
     var notify = 'true' == true;;
     var verify = 'true' == true;;
-    var valine = new Valine();
-    valine.init({
-        el: '#valine_container',
+    var valine = new Waline();
+    waline.init({
+        el: '#waline_container',
         notify: notify,
         verify: verify,
         guest_info: guest_info,
@@ -7692,7 +7692,7 @@ var loadCSS = function( href, before, media, attributes ){
   });
   function pjax_waline() {
     if(!document.querySelectorAll("#waline")[0])return;
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "要不，评论一下吧？";
     let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
@@ -7702,7 +7702,7 @@ var loadCSS = function( href, before, media, attributes ){
       el: '#waline',
       meta: meta,
       placeholder: pagePlaceholder,
-      path: path,
+      path: location.pathname.replace(/\/$/, '')
       serverURL: 'https://waline-nu.vercel.app',
       uploadImage: function(file) {
       const formData = new FormData();

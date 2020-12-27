@@ -1511,7 +1511,7 @@ var loadCSS = function( href, before, media, attributes ){
   });
   function pjax_waline() {
     if(!document.querySelectorAll("#waline")[0])return;
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let pagePlaceholder = pdata.commentPlaceholder || "要不，评论一下吧？";
     let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
@@ -1521,7 +1521,7 @@ var loadCSS = function( href, before, media, attributes ){
       el: '#waline',
       meta: meta,
       placeholder: pagePlaceholder,
-      path: path,
+      path: location.pathname.replace(/\/$/, '')
       serverURL: 'https://waline-nu.vercel.app',
       uploadImage: function(file) {
       const formData = new FormData();
