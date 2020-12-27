@@ -1521,7 +1521,7 @@ var loadCSS = function( href, before, media, attributes ){
       el: '#waline',
       meta: meta,
       placeholder: pagePlaceholder,
-      path: location.pathname.replace(/\/$/, '')
+      path: window.location.pathname
       serverURL: 'https://waline-nu.vercel.app',
       uploadImage: function(file) {
       const formData = new FormData();
@@ -1543,7 +1543,7 @@ var loadCSS = function( href, before, media, attributes ){
   });
 </script>
 
-<!-- QQ推送 -->
+<!-- coolpush -->
 <script>
   var pushLink = "https://push.xuthus.cc/send/7960ebaddbc3118f6fd8cc86a86d4840";
   var siteName = "W4J1e's blog";
