@@ -1346,7 +1346,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Dec 27 2020 19:42:38 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sun Dec 27 2020 20:39:21 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-27 日</div>
           
         </div>
@@ -2066,11 +2066,6 @@ var loadCSS = function( href, before, media, attributes ){
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-		    $.message({
-            title: '复制成功',
-            message: "复制成功，请遵守相关授权协议。",
-            type: 'success'
-        });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
             let $icon = $($btn.find('i'));
