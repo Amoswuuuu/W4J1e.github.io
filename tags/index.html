@@ -58,7 +58,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow floatable show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2070,7 +2070,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["/bb/"];
+        var banUrl = ["/bb/*"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
