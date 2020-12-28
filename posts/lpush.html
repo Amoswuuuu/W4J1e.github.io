@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>最新版基于Leancloud推送Valine评论到QQ - W4J1e&#39;s blog</title>
+  <title>最新版基于Leancloud或javascript推送Valine评论到QQ - W4J1e&#39;s blog</title>
   
-    <meta name="keywords" content="valine,hexo,Leancloud,Qmsg">
+    <meta name="keywords" content="valine,hexo,Leancloud,Qmsg,waline">
   
 
   
-    <meta name="description" content="最新修改版基于Leancloud推送Valine评论到QQ示例">
+    <meta name="description" content="最新修改版基于Leancloud或javascript推送Valine评论到QQ">
   
 
   <!-- feed -->
@@ -794,7 +794,7 @@
     
     
       <h1 class="title">
-        最新版基于Leancloud推送Valine评论到QQ
+        最新版基于Leancloud或javascript推送Valine评论到QQ
       </h1>
       <div class='new-meta-box'>
         
@@ -836,7 +836,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="最新版基于Leancloud推送Valine评论到QQ" data-path="/posts/lpush.html">
+      <div id="lc-pv" data-title="最新版基于Leancloud或javascript推送Valine评论到QQ" data-path="/posts/lpush.html">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -852,13 +852,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>825 words</p>
+      <p>1.1k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
+      <p>4 min</p>
     </a>
   </div>
 
@@ -871,7 +871,40 @@
 
 
   
-  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在许久之前尝试过按照大佬们的文档在leancloud配置Qmsg酱的推送，但是一直没有成功，后来用js推送的方式也不太稳定。</p>
+  <h2 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h2><p>2020.12.28更新：</p>
+<p>由于酷推机器人被封杀，所以现在也可以通过Qmsg酱用javascript推送了！支持waline！</p>
+<p>参考文档：<a href="https://w4j1e.xyz/posts/cpush.html">通过CoolPush实时推送hexo评论</a> </p>
+<p>代码如下：</p>
+<pre><code class="javascript">&lt;!-- Qmsg --&gt;
+&lt;script&gt;
+var title2=&quot;msg=W4J1e&#39;s blog又有新评论啦~！\n&quot;
+var SCKEY_Qmsg=&quot;https://qmsg.zendee.cn/send/你的key&quot;
+var ValineButton=document.getElementsByClassName(&quot;vsubmit vbtn&quot;)[0];
+function send_valine_Qmsg()&#123;
+  var pagename=document.title;
+  var wz=pagename.indexOf(&#39;|&#39;);
+  var res=pagename.substring(0,wz);
+  var pageurl=document.URL;
+  var ptime=new Date();
+  var vnick=document.getElementsByClassName(&quot;vnick vinput&quot;)[0].value;
+  var vmail=document.getElementsByClassName(&quot;vmail vinput&quot;)[0].value;
+  var vlink=document.getElementsByClassName(&quot;vlink vinput&quot;)[0].value;
+  var veditor=document.getElementsByClassName(&quot;veditor vinput&quot;)[0].value;
+  var data=&quot;昵称：&quot;+vnick+&quot;\n邮箱：&quot;+vmail+&quot;\n网站地址：&quot;+vlink+&quot;\n当前页面：&quot;+pagename+&quot;\n评论内容：&quot;+veditor+&quot;\n跳转链接：&quot;+pageurl+&quot;\n评论时间&quot;+ptime.toLocaleString();
+  var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+  httpRequest.open(&#39;POST&#39;,SCKEY_Qmsg, true); //第二步：打开连接
+  httpRequest.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+  httpRequest.send(title2+data);//发送请求 
+&#125;;
+
+   document.body.addEventListener(&#39;click&#39;, function(e) &#123;
+   if(e.target.className.indexOf(&#39;vsubmit&#39;) === -1) &#123;
+     return;
+   &#125;
+   send_valine_Qmsg();
+&#125;)
+</code></pre>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在许久之前尝试过按照大佬们的文档在leancloud配置Qmsg酱的推送，但是一直没有成功，后来用js推送的方式也不太稳定。</p>
 <p>&emsp;&emsp;此前日志报错代码：</p>
 <pre><code>QQ提醒失败: Request failed with status code 404</code></pre>
 <p>&emsp;&emsp;昨晚向Qmsg酱的开发者大佬@蝶衣 请教了一会，于是再度研究了一下大佬们的文档和代码，找到了头绪。</p>
@@ -973,10 +1006,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-26T15:45:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-28T22:04:53+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 26, 2020</p>
+    <p>更新于：Dec 28, 2020</p>
   </a>
 </div>
 
@@ -985,7 +1018,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/valine/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>valine</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Leancloud/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Leancloud</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Qmsg/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Qmsg</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/valine/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>valine</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Leancloud/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Leancloud</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Qmsg/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Qmsg</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/waline/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>waline</p></a></div>
 
 
         
@@ -998,7 +1031,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud推送Valine评论到QQ示例"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud或javascript推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud或javascript推送Valine评论到QQ"
           
           >
           
@@ -1010,7 +1043,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud推送Valine评论到QQ示例"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud或javascript推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud或javascript推送Valine评论到QQ"
           
           >
           
@@ -1022,7 +1055,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud推送Valine评论到QQ示例"
+          href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/lpush.html&title=最新版基于Leancloud或javascript推送Valine评论到QQ - W4J1e's blog&summary=最新修改版基于Leancloud或javascript推送Valine评论到QQ"
           
           >
           
@@ -1111,7 +1144,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E9%A2%86%E4%B8%80%E5%8F%AAQmsg%E9%85%B1"><span class="toc-text">认领一只Qmsg酱</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80Qmsg%E9%85%B1%E5%AE%98%E7%BD%91-%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9QQ%E7%99%BB%E9%99%86"><span class="toc-text">1.打开Qmsg酱官网,可以选择QQ登陆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E4%BD%A0%E4%B8%AD%E6%84%8F%E7%9A%84Qmsg%E9%85%B1%E5%B9%B6%E4%B8%94%E6%B7%BB%E5%8A%A0%E5%A5%B9%E4%B8%BAQQ%E5%A5%BD%E5%8F%8B"><span class="toc-text">2.选择你中意的Qmsg酱并且添加她为QQ好友</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E4%BD%A0%E8%A6%81%E6%8E%A5%E6%94%B6%E6%8E%A8%E9%80%81%E7%9A%84QQ%E5%8F%B7%E7%A0%81"><span class="toc-text">3.添加你要接收推送的QQ号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8B%BC%E6%8E%A5%E4%BD%A0%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80"><span class="toc-text">4.拼接你的接口地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E4%BD%A0%E7%9A%84Qmsg%E6%98%AF%E5%90%A6%E8%AE%A4%E9%A2%86%E6%88%90%E5%8A%9F"><span class="toc-text">5.测试你的Qmsg是否认领成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Leancloud%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8"><span class="toc-text">在Leancloud创建应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="toc-text">通过云引擎部署项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">1.在云引擎部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="toc-text">2.配置变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BF%90%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="toc-text">3.运行部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E6%8E%A8%E9%80%81"><span class="toc-text">4.测试推送</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">更新说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E9%A2%86%E4%B8%80%E5%8F%AAQmsg%E9%85%B1"><span class="toc-text">认领一只Qmsg酱</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80Qmsg%E9%85%B1%E5%AE%98%E7%BD%91-%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9QQ%E7%99%BB%E9%99%86"><span class="toc-text">1.打开Qmsg酱官网,可以选择QQ登陆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E4%BD%A0%E4%B8%AD%E6%84%8F%E7%9A%84Qmsg%E9%85%B1%E5%B9%B6%E4%B8%94%E6%B7%BB%E5%8A%A0%E5%A5%B9%E4%B8%BAQQ%E5%A5%BD%E5%8F%8B"><span class="toc-text">2.选择你中意的Qmsg酱并且添加她为QQ好友</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E4%BD%A0%E8%A6%81%E6%8E%A5%E6%94%B6%E6%8E%A8%E9%80%81%E7%9A%84QQ%E5%8F%B7%E7%A0%81"><span class="toc-text">3.添加你要接收推送的QQ号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8B%BC%E6%8E%A5%E4%BD%A0%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80"><span class="toc-text">4.拼接你的接口地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E4%BD%A0%E7%9A%84Qmsg%E6%98%AF%E5%90%A6%E8%AE%A4%E9%A2%86%E6%88%90%E5%8A%9F"><span class="toc-text">5.测试你的Qmsg是否认领成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Leancloud%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8"><span class="toc-text">在Leancloud创建应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE"><span class="toc-text">通过云引擎部署项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">1.在云引擎部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="toc-text">2.配置变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%BF%90%E8%A1%8C%E9%83%A8%E7%BD%B2"><span class="toc-text">3.运行部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95%E6%8E%A8%E9%80%81"><span class="toc-text">4.测试推送</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
     </div>
   </section>
 
@@ -1335,7 +1368,7 @@
 
 
     <div class='content'>
-      <a href="/tags/Coolpush/" style="font-size: 14px; color: #add8e6">Coolpush</a> <a href="/tags/Leancloud/" style="font-size: 14px; color: #add8e6">Leancloud</a> <a href="/tags/Qmsg/" style="font-size: 14px; color: #add8e6">Qmsg</a> <a href="/tags/hexo/" style="font-size: 22px; color: #5cd2d1">hexo</a> <a href="/tags/javascript/" style="font-size: 16px; color: #99d7e1">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #add8e6">js</a> <a href="/tags/sql/" style="font-size: 14px; color: #add8e6">sql</a> <a href="/tags/update/" style="font-size: 14px; color: #add8e6">update</a> <a href="/tags/valine/" style="font-size: 18px; color: #85d5dc">valine</a> <a href="/tags/volantis/" style="font-size: 18px; color: #85d5dc">volantis</a> <a href="/tags/waline/" style="font-size: 14px; color: #add8e6">waline</a> <a href="/tags/webshell/" style="font-size: 14px; color: #add8e6">webshell</a> <a href="/tags/web%E6%B8%97%E9%80%8F/" style="font-size: 14px; color: #add8e6">web渗透</a> <a href="/tags/%E5%88%9B%E4%BD%9C/" style="font-size: 20px; color: #70d4d6">创作</a> <a href="/tags/%E5%A4%9C%E6%9D%A5%E9%9D%9E/" style="font-size: 16px; color: #99d7e1">夜来非</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 20px; color: #70d4d6">小说</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" style="font-size: 14px; color: #add8e6">年度总结</a> <a href="/tags/%E6%9D%8E%E5%BF%97/" style="font-size: 14px; color: #add8e6">李志</a> <a href="/tags/%E7%8E%B0%E5%9C%BA/" style="font-size: 14px; color: #add8e6">现场</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 24px; color: #48d1cc">生活</a> <a href="/tags/%E7%A6%8F%E5%88%A9/" style="font-size: 14px; color: #add8e6">福利</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #add8e6">网络</a> <a href="/tags/%E8%99%9A%E6%9E%84/" style="font-size: 22px; color: #5cd2d1">虚构</a> <a href="/tags/%E8%AF%97%E6%AD%8C/" style="font-size: 16px; color: #99d7e1">诗歌</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #add8e6">资源</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #add8e6">音乐</a>
+      <a href="/tags/Coolpush/" style="font-size: 14px; color: #add8e6">Coolpush</a> <a href="/tags/Leancloud/" style="font-size: 14px; color: #add8e6">Leancloud</a> <a href="/tags/Qmsg/" style="font-size: 14px; color: #add8e6">Qmsg</a> <a href="/tags/hexo/" style="font-size: 22px; color: #5cd2d1">hexo</a> <a href="/tags/javascript/" style="font-size: 16px; color: #99d7e1">javascript</a> <a href="/tags/js/" style="font-size: 14px; color: #add8e6">js</a> <a href="/tags/sql/" style="font-size: 14px; color: #add8e6">sql</a> <a href="/tags/update/" style="font-size: 14px; color: #add8e6">update</a> <a href="/tags/valine/" style="font-size: 18px; color: #85d5dc">valine</a> <a href="/tags/volantis/" style="font-size: 18px; color: #85d5dc">volantis</a> <a href="/tags/waline/" style="font-size: 16px; color: #99d7e1">waline</a> <a href="/tags/webshell/" style="font-size: 14px; color: #add8e6">webshell</a> <a href="/tags/web%E6%B8%97%E9%80%8F/" style="font-size: 14px; color: #add8e6">web渗透</a> <a href="/tags/%E5%88%9B%E4%BD%9C/" style="font-size: 20px; color: #70d4d6">创作</a> <a href="/tags/%E5%A4%9C%E6%9D%A5%E9%9D%9E/" style="font-size: 16px; color: #99d7e1">夜来非</a> <a href="/tags/%E5%B0%8F%E8%AF%B4/" style="font-size: 20px; color: #70d4d6">小说</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" style="font-size: 14px; color: #add8e6">年度总结</a> <a href="/tags/%E6%9D%8E%E5%BF%97/" style="font-size: 14px; color: #add8e6">李志</a> <a href="/tags/%E7%8E%B0%E5%9C%BA/" style="font-size: 14px; color: #add8e6">现场</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 24px; color: #48d1cc">生活</a> <a href="/tags/%E7%A6%8F%E5%88%A9/" style="font-size: 14px; color: #add8e6">福利</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #add8e6">网络</a> <a href="/tags/%E8%99%9A%E6%9E%84/" style="font-size: 22px; color: #5cd2d1">虚构</a> <a href="/tags/%E8%AF%97%E6%AD%8C/" style="font-size: 16px; color: #99d7e1">诗歌</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 14px; color: #add8e6">资源</a> <a href="/tags/%E9%9F%B3%E4%B9%90/" style="font-size: 14px; color: #add8e6">音乐</a>
     </div>
   </section>
 
@@ -1382,7 +1415,7 @@
       
         <div class="webinfo-item">
           <div>共有字数：</div>
-          <div>17.3k 字</div>
+          <div>17.6k 字</div>
         </div>
       
 
@@ -1408,7 +1441,7 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 28 2020 21:41:33 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 28 2020 22:07:05 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-28 日</div>
           
         </div>
@@ -1506,7 +1539,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="最新版基于Leancloud推送Valine评论到QQ";
+  pdata.postTitle="最新版基于Leancloud或javascript推送Valine评论到QQ";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
@@ -2235,46 +2268,35 @@ var loadCSS = function( href, before, media, attributes ){
   });
 </script>
 
-<!-- coolpush -->
+<!-- Qmsg -->
 <script>
-  var pushLink ="https://qmsg.zendee.cn/send/d7ec3b353976655d4220a0d99dbaa8aa";
-  var siteName = "W4J1e's blog";
-  var valineButton=document.getElementsByClassName("vsubmit vbtn")[0];
-  var title = siteName + "上又有新评论啦~!\n";
+var title2="msg=W4J1e's blog又有新评论啦~！\n"
+var SCKEY_Qmsg="https://qmsg.zendee.cn/send/d7ec3b353976655d4220a0d99dbaa8aa"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Qmsg(){
+  var pagename=document.title;
+  var wz=pagename.indexOf('|');
+  var res=pagename.substring(0,wz);
+  var pageurl=document.URL;
+  var ptime=new Date();
+  var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+  var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+  var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+  var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+  var data="昵称："+vnick+"\n邮箱："+vmail+"\n网站地址："+vlink+"\n当前页面："+pagename+"\n评论内容："+veditor+"\n跳转链接："+pageurl+"\n评论时间"+ptime.toLocaleString();
+  var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+  httpRequest.open('POST',SCKEY_Qmsg, true); //第二步：打开连接
+  httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+  httpRequest.send(title2+data);//发送请求 
+};
 
-  function send_valine() {
-    //获取元素信息
-    var pagename = document.title;
-    var pageurl = document.URL;
-    var pushtime = new Date();
-    var vnick = document.getElementsByClassName("vnick vinput")[0].value;
-    var vmail = document.getElementsByClassName("vmail vinput")[0].value;
-    var vlink = document.getElementsByClassName("vlink vinput")[0].value;
-    var veditor = document.getElementsByClassName("veditor vinput")[0].value;
-    content =
-      title +
-      "昵称：" + vnick +
-      "\n邮箱：" + vmail +
-      "\n网站地址：" + vlink +
-      "\n文章标题：" + pagename +
-      "\n评论内容：" + veditor +
-      "\n文章链接：" + pageurl +
-      "\n评论时间" + pushtime.toLocaleString() + "\n";
-    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
-    httpRequest.open("POST", pushLink, true); //第二步：打开连接
-    httpRequest.setRequestHeader(
-      "Content-type",
-      "application/json"
-    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
-    httpRequest.send(content); //发送请求 
-  }
-
-  document.body.addEventListener('click', function(e) {
-  if(e.target.className.indexOf('vsubmit') === -1) {
-    return;
-  }
-  send_valine();
+   document.body.addEventListener('click', function(e) {
+   if(e.target.className.indexOf('vsubmit') === -1) {
+     return;
+   }
+   send_valine_Qmsg();
 })
+
 </script>
 
 
