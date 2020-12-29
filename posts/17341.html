@@ -1030,15 +1030,14 @@
         <a class='next' href='/posts/34223.html'>
           <p class='title'>更新日志<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>
+2020.12.29
+①新增issue提交友链方式；
+
 2020.12.27
 ①新增在线打碟，点此前往;②正式启用waline评论系统。
 
 2020.12.26
-①优化了影单显示和修复了跳转bug；②新增小游戏在“好玩”；③其它未想起优化。
-
-
-
-...</p>
+①优化了影单显示和修复了跳转b...</p>
         </a>
       
     </div>
@@ -1328,7 +1327,7 @@
       
         <div class="webinfo-item">
           <div>共有字数：</div>
-          <div>17.6k 字</div>
+          <div>17.7k 字</div>
         </div>
       
 
@@ -1354,8 +1353,8 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 28 2020 23:54:38 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-12-28 日</div>
+            <div id="last-update" style="display: none;">Tue Dec 29 2020 14:26:52 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-12-29 日</div>
           
         </div>
         
@@ -1405,7 +1404,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-12-28 日';
+            document.getElementById('last-update-show').innerHTML = '2020-12-29 日';
           }
         </script>
         
@@ -2005,6 +2004,21 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
 
 
 
@@ -2757,6 +2771,10 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         });
         
         
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
         
         
           pjax_initCopyCode();

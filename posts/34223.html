@@ -26,6 +26,9 @@
 
   
     <meta name="description" content="
+2020.12.29
+①新增issue提交友链方式；
+
 2020.12.27
 ①新增在线打碟，点此前往;②正式启用waline评论系统。
 
@@ -851,13 +854,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>816 words</p>
+      <p>828 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
+      <p>3 min</p>
     </a>
   </div>
 
@@ -871,6 +874,9 @@
 
   
   <div class="timeline">
+<div class="timenode"><div class="meta"><p><p>2020.12.29</p>
+</p></div><div class="body"><p>①新增issue<a href="https://gitee.com/W4j1e/bg/issues">提交友链</a>方式；</p></div></div>
+
 <div class="timenode"><div class="meta"><p><p>2020.12.27</p>
 </p></div><div class="body"><p>①新增在线打碟，<a href="https://w4j1e.xyz/c/dd.html">点此</a>前往;</p><p>②正式启用<a href="https://w4j1e.xyz/posts/waline.html">waline</a>评论系统。</p></div></div>
 
@@ -964,10 +970,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-27T17:12:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-29T14:25:06+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 27, 2020</p>
+    <p>更新于：Dec 29, 2020</p>
   </a>
 </div>
 
@@ -990,6 +996,9 @@
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
+2020.12.29
+①新增issue提交友链方式；
+
 2020.12.27
 ①新增在线打碟，点此前往;②正式启用waline评论系统。
 
@@ -1007,6 +1016,9 @@
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
+2020.12.29
+①新增issue提交友链方式；
+
 2020.12.27
 ①新增在线打碟，点此前往;②正式启用waline评论系统。
 
@@ -1024,6 +1036,9 @@
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
           href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
+2020.12.29
+①新增issue提交友链方式；
+
 2020.12.27
 ①新增在线打碟，点此前往;②正式启用waline评论系统。
 
@@ -1193,16 +1208,13 @@
 
   <div class='content'>
     
-      <p>特：酷推机器人出现问题，已经换用Qmsg酱推送</p>
-
-    
-      <p>①正式启用waline；</p>
+      <p>①新增issue提交友链方式；</p>
 
     
       <p>②新增几个小游戏在“好玩”；</p>
 
     
-      <p>③将“关于”迁移到站内；</p>
+      <p>③更换Qmsg酱推送；</p>
 
     
       <p>④弄了虚拟主机，考虑备案中；</p>
@@ -1412,7 +1424,7 @@
       
         <div class="webinfo-item">
           <div>共有字数：</div>
-          <div>17.6k 字</div>
+          <div>17.7k 字</div>
         </div>
       
 
@@ -1438,8 +1450,8 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 28 2020 23:54:38 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-12-28 日</div>
+            <div id="last-update" style="display: none;">Tue Dec 29 2020 14:26:52 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-12-29 日</div>
           
         </div>
         
@@ -1489,7 +1501,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-12-28 日';
+            document.getElementById('last-update-show').innerHTML = '2020-12-29 日';
           }
         </script>
         
@@ -2089,6 +2101,21 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+
+
+  <script>
+  function loadIssuesJS() {
+    if ($(".md").find(".issues-api").length == 0) return;
+    setTimeout(function() {
+	
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/issues.min.js');
+	
+    }, 1);
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+</script>
 
 
 
@@ -2841,6 +2868,10 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         });
         
         
+        
+          if (typeof IssuesAPI == "undefined") {
+            loadIssuesJS();
+          }
         
         
           pjax_initCopyCode();
