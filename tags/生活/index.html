@@ -1415,7 +1415,7 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Wed Dec 30 2020 14:59:15 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Wed Dec 30 2020 15:03:40 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-30 日</div>
           
         </div>
@@ -2238,7 +2238,7 @@ var loadCSS = function( href, before, media, attributes ){
     let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
+      path = defaultPath || decodeURI(location.pathname.replace(/\/$/, '') );
     }
     new Waline({
       el: '#waline',

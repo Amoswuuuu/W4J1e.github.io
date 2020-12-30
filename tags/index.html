@@ -1539,7 +1539,7 @@ var loadCSS = function( href, before, media, attributes ){
     let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
+      path = defaultPath || decodeURI(location.pathname.replace(/\/$/, '') );
     }
     new Waline({
       el: '#waline',
