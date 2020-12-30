@@ -2773,7 +2773,7 @@ article#tag .all-tags ul li span:before {
   color: rgba(68,68,68,0.9);
 }
 .article code {
-  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .article code:not([class]) {
   word-break: break-all;
@@ -4622,4 +4622,33 @@ img.lazyload:not(.placeholder).loaded {
 }
 #safearea {
   display: block;
+}
+/*视频适配*/
+.video {
+  position: relative;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .video {
+    height: 15em;
+    max-width: 25em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .video {
+    height: 20em;
+    max-width: 30em;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .video {
+    height: 30em;
+    max-width: 40em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .video {
+    height: 40em;
+    max-width: 50em;
+  }
 }
