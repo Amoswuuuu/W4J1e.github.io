@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6'>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -54,7 +54,7 @@
   
 
   <script id="loadcss"></script>
-  
+
 </head>
 
 <body>
@@ -381,8 +381,8 @@
           
 				</ul>
 			</div>
-			
-		   <div id="tp-weather-widget"></div>
+
+      <div id="tp-weather-widget"></div>
            <script>
            (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
            window.SeniverseWeatherWidget('show', {
@@ -397,9 +397,8 @@
            container: "tp-weather-widget"
            })
           </script>
-			
-             <div class="m_search">
-             <form name="searchform" class="form u-search-form">
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
           <input type="text" class="input u-search-input" placeholder="Search..." />
         </form>
@@ -1369,7 +1368,7 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Wed Dec 30 2020 13:29:55 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Wed Dec 30 2020 14:59:15 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-30 日</div>
           
         </div>
@@ -1490,6 +1489,7 @@
   
     <meting-js
       theme='#1BCDFC'
+      autoplay='false'
       volume='0.5'
       loop='all'
       order='list'
@@ -1576,7 +1576,7 @@
     
       
         Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.2.0" target="_blank" class="codename">Volantis</a>
         as theme
       
     
@@ -1588,7 +1588,6 @@
       
     
   </footer>
-
 
 
       <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
@@ -2025,7 +2024,7 @@ var loadCSS = function( href, before, media, attributes ){
     if ($(".md").find(".issues-api").length == 0) return;
     setTimeout(function() {
 	
-	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/issues.min.js');
+	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.2.0/source/js/issues.min.js');
 	
     }, 1);
   };
@@ -2150,17 +2149,22 @@ var loadCSS = function( href, before, media, attributes ){
   let APlayerController = new Object();
   APlayerController.id = '2118214092';  // 设定全局音乐播放ID
   APlayerController.volume = '0.5';
-  APlayerController.autoPlay = 'false';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
+  // APlayer 需要在  MetingJS 之前加载
+  loadScript("")
+  window.volantis.LoadMetingJS=0
+  var checkAPlayer = setInterval(function () {
+    if (!window.APlayer) return
+    clearInterval(checkAPlayer)
+	if (!window.volantis.LoadMetingJS&&!window.MetingJSElement){
+	  window.LoadMetingJS=1
+      loadScript("")
+	  }
+  }, 2500)
 
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
-
-  loadScript("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
-
-
-	
-	  loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/aplayer.min.js');
-	
+  
+    loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.2.0/source/js/aplayer.min.js');
+  
 
 </script>
 
@@ -2178,7 +2182,7 @@ var loadCSS = function( href, before, media, attributes ){
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+  var requiredFields = 'nick,mail,'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
   function pjax_waline() {
@@ -2187,7 +2191,7 @@ var loadCSS = function( href, before, media, attributes ){
     let path = pdata.commentPath;
     if (path.length == 0) {
       let defaultPath = '';
-      path = defaultPath || decodeURI(location.pathname.replace(/\/$/, '') );
+      path = defaultPath || decodeURI(window.location.pathname);
     }
     new Waline({
       el: '#waline',
@@ -2208,49 +2212,21 @@ var loadCSS = function( href, before, media, attributes ){
       avatar: 'robohash',
       lang: 'zh-CN'
   
+
     });
   }
+
   $(function () {
     pjax_waline();
   });
 </script>
 
-<!-- Qmsg -->
-<script>
-var title2="msg=W4J1e's blog又有新评论啦~！\n"
-var SCKEY_Qmsg="https://qmsg.zendee.cn/send/d7ec3b353976655d4220a0d99dbaa8aa"
-var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
-function send_valine_Qmsg(){
-  var pagename=document.title;
-  var wz=pagename.indexOf('|');
-  var res=pagename.substring(0,wz);
-  var pageurl=document.URL;
-  var ptime=new Date();
-  var vnick=document.getElementsByClassName("vnick vinput")[0].value;
-  var vmail=document.getElementsByClassName("vmail vinput")[0].value;
-  var vlink=document.getElementsByClassName("vlink vinput")[0].value;
-  var veditor=document.getElementsByClassName("veditor vinput")[0].value;
-  var data="昵称："+vnick+"\n邮箱："+vmail+"\n网站地址："+vlink+"\n当前页面："+pagename+"\n评论内容："+veditor+"\n跳转链接："+pageurl+"\n评论时间"+ptime.toLocaleString();
-  var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
-  httpRequest.open('POST',SCKEY_Qmsg, true); //第二步：打开连接
-  httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
-  httpRequest.send(title2+data);//发送请求 
-};
-
-   document.body.addEventListener('click', function(e) {
-   if(e.target.className.indexOf('vsubmit') === -1) {
-     return;
-   }
-   send_valine_Qmsg();
-})
-
-</script>
 
 
 
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.2.0/source/js/app.min.js"></script>
 
 
 
@@ -2262,7 +2238,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 
 $('.input.u-search-input').one('focus',function(){
 	
-		loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/search/hexo.min.js',setSearchService);
+		loadScript('https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.2.0/source/js/search/hexo.min.js',setSearchService);
 	
 })
 
@@ -2614,6 +2590,16 @@ document.addEventListener("pjax:success", bindToggleButton);
 
 
 
+<!-- baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  setTimeout(function() {
+    loadScript("https://hm.baidu.com/hm.js?76ab374e00f4b853f0ff3310ac6daa96")
+  }, 5000);
+})();
+</script>
+
 
 <script>
 function listennSidebarTOC() {
@@ -2764,6 +2750,8 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
       // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
        
+       _hmt.push(['_trackPageview', document.location.pathname]);
+       
 
       // 关于谷歌统计对 SPA 页面的处理：
       // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
@@ -2804,8 +2792,9 @@ document.addEventListener("pjax:success", listennSidebarTOC);
         
         
         
+        
           pjax_waline();
-        		
+        
       } catch (e) {
         console.log(e);
       }
@@ -2818,19 +2807,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
     });
 </script>
 
-
     
   </div>
 </body>
 </html>
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?76ab374e00f4b853f0ff3310ac6daa96";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-

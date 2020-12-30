@@ -4828,7 +4828,7 @@ object-assign
         e.exports = {
             nick: "NickName",
             mail: "E-Mail",
-            link: "Website(可选)",
+            link: "Website(http://)",
             nickFail: "NickName cannot be less than 3 bytes.",
             mailFail: "Please confirm your email address.",
             sofa: "No comment yet.",
@@ -4898,7 +4898,7 @@ object-assign
         e.exports = {
             nick: "昵称",
             mail: "邮箱",
-            link: "网址（可选）",
+            link: "网址(http://)",
             nickFail: "昵称不能少于3个字符",
             mailFail: "请填写正确的邮件地址",
             sofa: "来发评论吧~",
@@ -4933,7 +4933,7 @@ object-assign
         e.exports = {
             nick: "暱稱",
             mail: "郵箱",
-            link: "網址(可選)",
+            link: "網址(http://)",
             nickFail: "昵稱不能少於3個字符",
             mailFail: "請填寫正確的郵件地址",
             sofa: "來發評論吧~",

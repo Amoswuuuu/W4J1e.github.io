@@ -1,3 +1,7 @@
+//Cookie.js
+function setCookie(e,n,i,o,t,r){if("undefined"!=typeof is_remember)return!1;var u=new Date;u.setTime(u.getTime());var c=new Date(u.getTime()+i);document.cookie=e+"="+escape(n)+(i?"; expires="+c.toGMTString():"")+(o?"; path="+o:"")+(t?"; domain="+t:"")+(r?"; secure":"")}function getCookie(e){var n=document.cookie,i=e+"=",o=n.indexOf("; "+i);if(-1==o){if(0!=(o=n.indexOf(i)))return null}else o+=2;var t=document.cookie.indexOf(";",o);return-1==t&&(t=n.length),unescape(n.substring(o+i.length,t))}function deleteCookie(e,n,i){getCookie(e)&&(document.cookie=e+"="+(n?"; path="+n:"")+(i?"; domain="+i:"")+"; expires=Thu, 01-Jan-70 00:00:01 GMT")}
+
+
 // 检查 Aplayer 对象状态
 function checkAPlayer() {
 	if (APlayerController.player == undefined) {
@@ -11,9 +15,8 @@ function checkAPlayer() {
 
 // 设置全局播放器所对应的 aplyer 对象
 function setAPlayerObject() {
-	if (APlayerController.id == undefined) return;
 	document.querySelectorAll('meting-js').forEach((item, index)=>{
-		if (item.meta.id&&item.meta.id == APlayerController.id) {
+		if (item.meta.id == APlayerController.id) {
 			if (document.querySelectorAll('meting-js')[index].aplayer != undefined) {
  				APlayerController.player = document.querySelectorAll('meting-js')[index].aplayer;
 				setAPlayerObserver();
@@ -151,18 +154,12 @@ function updateTitle() {
 		console.log(error);
 	}
 }
+var checkrightmenu = setInterval(function () {
+  console.log(0)
+  if (!document.querySelectorAll('meting-js')[0].meta) return
+  if (!document.querySelectorAll('meting-js')[0].meta.id) return
+  clearInterval(checkrightmenu)
+  checkAPlayer();
+  console.log(1)
+}, 1000)
 
-(function ($) {
-	// 网速快
-	checkAPlayer();
-	// 网速一般
-	setTimeout(function(){
-		checkAPlayer();
-	}, 3000);
-	// 网速较慢
-	setTimeout(function(){
-		checkAPlayer();
-	}, 10000);
-
-
-})(jQuery);
