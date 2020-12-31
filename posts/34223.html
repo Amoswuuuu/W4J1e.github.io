@@ -27,7 +27,7 @@
   
     <meta name="description" content="
 2020.12.31
-①修复影单“想看”图片显示；②修改copyright
+①修复影单“想看”图片显示；②新增waline评论数统计；③修改copyright。
 
 
 
@@ -840,15 +840,29 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>864 words</p>
+      <p>字数：872字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
+
+
+          
+        
+          
+            
+<div class="new-meta-item comments-count">
+  
+  <a href="/posts/34223.html#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span id="/posts/34223.html" class="waline-comment-count"></span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
 
 
           
@@ -861,7 +875,7 @@
   
   <div class="timeline">
 <div class="timenode"><div class="meta"><p><p>2020.12.31</p>
-</p></div><div class="body"><p>①修复影单“想看”图片显示；</p><p>②修改copyright</p></div></div>
+</p></div><div class="body"><p>①修复影单“想看”图片显示；</p><p>②新增waline评论数统计；</p><p>③修改copyright。</p></div></div>
 
 
 
@@ -970,7 +984,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T12:49:28+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T23:01:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Dec 31, 2020</p>
@@ -997,7 +1011,7 @@
           
           href="http://connect.qq.com/widget/shareqq/index.html?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
 2020.12.31
-①修复影单“想看”图片显示；②修改copyright
+①修复影单“想看”图片显示；②新增waline评论数统计；③修改copyright。
 
 
 
@@ -1016,7 +1030,7 @@
           
           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
 2020.12.31
-①修复影单“想看”图片显示；②修改copyright
+①修复影单“想看”图片显示；②新增waline评论数统计；③修改copyright。
 
 
 
@@ -1035,7 +1049,7 @@
           
           href="http://service.weibo.com/share/share.php?url=https://w4j1e.xyz/posts/34223.html&title=更新日志 - W4J1e's blog&summary=
 2020.12.31
-①修复影单“想看”图片显示；②修改copyright
+①修复影单“想看”图片显示；②新增waline评论数统计；③修改copyright。
 
 
 
@@ -1447,7 +1461,7 @@
         <div class="webinfo-item">
           <div>最后活动：</div>
           
-            <div id="last-update" style="display: none;">Thu Dec 31 2020 20:30:02 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Thu Dec 31 2020 23:02:34 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-31 日</div>
           
         </div>
@@ -1655,9 +1669,9 @@
       
     
       
-        Use
+        本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.6" target="_blank" class="codename">Volantis</a>
-        as theme
+        作为主题
       
     
       
@@ -1858,12 +1872,12 @@ var loadCSS = function( href, before, media, attributes ){
   <div id="rightmenu-wrapper">
     <ul class="list-v rightmenu" id="rightmenu-content">
       <li class='option'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>Copy Text</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick="document.execCommand('copy')"><i class='fa fa-copy fa-fw'></i>复制文本</a>
         <hr id='hr-text'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>复制链接</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>在新标签页打开</a>
         <hr id='hr-href'>
-        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>复制图片地址</a>
         <hr id='hr-src'>
       </li>
       
